@@ -6,7 +6,7 @@ using namespace std;
 // Record
 class Alumno {
   public:
-    char Nombre[20];
+    char Nombre[20]; // Tamaño fijo
     char Carrera[10];
 };
 
@@ -14,6 +14,7 @@ class Alumno {
 ostream& operator <<(ostream& stream, Alumno& al){
   stream.write(al.Nombre, 20);
   stream.write(al.Carrera, 10);
+  // stream << '\n';
   stream << flush; // Fuerza la limpieza del buffer
 
   return stream;
@@ -27,6 +28,8 @@ istream& operator >>(istream& stream, Alumno& al){
   return stream;
 }
 
+string filename = "archivo.dat";
+
 void testWrite(){
   Alumno al1 {"Pedro", "CS"};
   Alumno al2 {"Marta", "IND"};
@@ -35,7 +38,7 @@ void testWrite(){
   Alumno al5 {"Elena", "BIO"};
 
   // app: Abre el archivo y mueve el cursor al final
-  ofstream outFile("archivo.dat", ios::app | ios::binary);
+  ofstream outFile(filename, ios::out | ios::binary);
 
   if (!outFile.is_open()){
     cerr << "No se puede abrir el archivo";
@@ -51,8 +54,8 @@ void testWrite(){
   outFile.close();
 }
 
-void testReadB(){
-  ifstream inFile("archivo.dat", ios::in | ios::binary);
+void testRead(){
+  ifstream inFile(filename, ios::in | ios::binary);
 
   if (!inFile.is_open()){
     cerr << "No se puede abrir el archivo";
@@ -60,36 +63,76 @@ void testReadB(){
   }
 
   int count = 0;
+  Alumno al;
 
-  while (!inFile.eof()){
-    Alumno al;
-    inFile >> al;
+  while (inFile.read((char*) &al, sizeof(Alumno))){ 
     cout << count++ << ": " << al.Nombre << "-" << al.Carrera << endl;
   }
+
+  inFile.close();
 }
 
 void testRead(int i){
   Alumno al;
 
-  ifstream inFile("archivo.txt", ios::in | ios::binary);
+  ifstream inFile(filename, ios::in | ios::binary);
 
   if (!inFile.is_open()){
     cerr << "No se puede abrir el archivo";
     exit(1);
   }
 
+  // Mover el puntero al comienzo del registro que deseamos.
   inFile.seekg(i * sizeof(al), ios::beg);
+
+  // Leemos cada byte del archivo y se aplica typecast a char
   inFile.read((char *) &al, sizeof(al));
-  inFile >> al;
+
   cout << al.Nombre << "-" << al.Carrera << endl;
 
   inFile.close();
 }
 
+void testDelete(int i){
+  fstream file(filename, ios::in | ios::out | ios::binary);
+
+  if (!file.is_open()){
+    cerr << "No se puede abrir el archivo";
+    exit(1);
+  }
+
+  Alumno al;
+
+  // Colocar el puntero a un registro arriba al que se desea eliminar
+
+  while(file.seekg(i * sizeof(al) + sizeof(al), ios::beg)){
+    file >> al;
+    file.seekp(i * sizeof(al), ios::beg);
+    file << al;
+    i++;
+  }
+
+  file.close();
+}
+
 int main(){
+  Alumno al;
+
+  cout << sizeof(al) << endl;
+
   testWrite();
-  // testRead();
-  // testRead(2);
+
+  cout << "Lista de Alumnos: " << endl;
+  testRead();
+
+  cout << "Alumno 0:" << endl;
+  testRead(0);
+
+  cout << "Delete alumno 0" << endl;
+  testDelete(0);
+
+  cout << "Alumnos que quedan: " << endl;
+  testRead();
 
   return 0;
 }
