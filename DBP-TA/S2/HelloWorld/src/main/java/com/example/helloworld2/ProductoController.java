@@ -13,7 +13,7 @@ public class ProductoController {
     @Autowired
     private ProductoService productoService;
 
-    @PostMapping
+    @PostMapping("/producto")
     public ResponseEntity<Producto> crearProducto(@RequestBody Producto producto){
         return new ResponseEntity<>(productoService.crearProducto(producto), HttpStatus.CREATED);
     }

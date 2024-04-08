@@ -1,7 +1,5 @@
 package com.example.helloworld2;
 
-
-
 import jakarta.persistence.*;
 
 import java.util.UUID;
