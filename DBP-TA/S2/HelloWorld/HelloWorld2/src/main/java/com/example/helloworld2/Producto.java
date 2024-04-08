@@ -1,15 +1,24 @@
-package org.example.helloworld;
+package com.example.helloworld2;
+
+
+
+import jakarta.persistence.*;
 
 import java.util.UUID;
 
+@Entity
+@Table(name = "producto")
 public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id", nullable = false)
     private UUID id;
     private String nombre;
     private String descripcion;
     private Double precio;
-    private Integer stock;
+    private Integer Stock;
 
-    // Getters and setters
     public UUID getId() {
         return id;
     }
@@ -43,10 +52,10 @@ public class Producto {
     }
 
     public Integer getStock() {
-        return stock;
+        return Stock;
     }
 
     public void setStock(Integer stock) {
-        this.stock = stock;
+        Stock = stock;
     }
 }
