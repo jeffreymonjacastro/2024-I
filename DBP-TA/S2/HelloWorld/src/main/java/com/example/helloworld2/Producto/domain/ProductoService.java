@@ -24,7 +24,8 @@ public class ProductoService {
         return productoRepository.findAll();
     }
 
-    public void eliminarProducto(UUID id){
+    public String eliminarProducto(UUID id){
         productoRepository.deleteById(id);
+        return "Producto " + id + " eliminado";
     }
 }
