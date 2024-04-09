@@ -1,6 +1,7 @@
 package com.example.helloworld2.Producto.domain;
 
 import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 
 import java.util.UUID;
 

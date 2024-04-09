@@ -3,6 +3,7 @@ package com.example.helloworld2.Producto.domain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -17,5 +18,13 @@ public class ProductoService {
     public Producto crearProducto(Producto producto){
         producto.setId(UUID.randomUUID());
         return productoRepository.save(producto);
+    }
+
+    public List<Producto> listarTodosLosProductos(){
+        return productoRepository.findAll();
+    }
+
+    public void eliminarProducto(UUID id){
+        productoRepository.deleteById(id);
     }
 }
