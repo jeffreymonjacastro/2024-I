@@ -1,4 +1,4 @@
-package com.example.helloworld2;
+package com.example.helloworld2.Producto.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

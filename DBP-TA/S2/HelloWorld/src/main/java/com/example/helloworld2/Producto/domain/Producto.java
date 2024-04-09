@@ -1,4 +1,4 @@
-package com.example.helloworld2;
+package com.example.helloworld2.Producto.domain;
 
 import jakarta.persistence.*;
 

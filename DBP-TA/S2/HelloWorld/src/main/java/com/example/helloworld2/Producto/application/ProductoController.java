@@ -1,5 +1,7 @@
-package com.example.helloworld2;
+package com.example.helloworld2.Producto.application;
 
+import com.example.helloworld2.Producto.domain.Producto;
+import com.example.helloworld2.Producto.domain.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
