@@ -130,6 +130,7 @@ class FixedRecordFile {
 
     if (!file.is_open()) throw ("No se puede abrir el archivo");
 
+
     Alumno al;
 
     if (strategy == FREE_LIST){
