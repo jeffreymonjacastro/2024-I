@@ -27,8 +27,8 @@ public class ProductoController {
         return new ResponseEntity(productoService.listarTodosLosProductos(), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{product_id}")
-    public void eliminarProducto(@PathVariable UUID id){
-        productoService.eliminarProducto(id);
+    @DeleteMapping("/{producto_id}")
+    public ResponseEntity<String> eliminarProducto(@PathVariable("producto_id") UUID id){
+        return new ResponseEntity(productoService.eliminarProducto(id), HttpStatus.OK);
     }
 }
