@@ -460,6 +460,5 @@ int main()
     testDeleteRecordsMoveToLast();
     testDeleteRecordsFreeList();
 
-
     return 0;
 }

@@ -2,7 +2,7 @@
 __pycache__/
 venv/
 
-.idea
+.idea/*
 cmake-build-debug
 
 # Compiled class file

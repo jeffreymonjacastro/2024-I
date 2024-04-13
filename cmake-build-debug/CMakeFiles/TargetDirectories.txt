@@ -1,0 +1,3 @@
+C:/Users/jeffr/GitHub/2024-I/cmake-build-debug/CMakeFiles/Karol.dir
+C:/Users/jeffr/GitHub/2024-I/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/jeffr/GitHub/2024-I/cmake-build-debug/CMakeFiles/rebuild_cache.dir
