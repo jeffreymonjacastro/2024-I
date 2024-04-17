@@ -337,8 +337,7 @@ public:
         return record;
     }
 
-    int size()
-    {
+    int size(){
         ifstream file(filename, ios::in | ios::binary);
 
         if (!file.is_open())

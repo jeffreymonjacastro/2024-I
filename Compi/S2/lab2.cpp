@@ -69,11 +69,15 @@ Token* Scanner::nextToken() {
   char c;
   state = 0;
   startLexema();
+
   while (1) {
     switch (state) {
       case 0: 
         c = nextChar();
-        if (c == ' ') { startLexema(); state = 0; }
+        if (c == ' ') { 
+          startLexema(); 
+          state = 0; 
+        }
         else if (c == '\0') return new Token(Token::END);
         else if (c == '(') state = 1;
         else if (c == ')') state = 2;
