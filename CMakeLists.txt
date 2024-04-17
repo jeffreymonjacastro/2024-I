@@ -3,4 +3,6 @@ project(2024_I)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Karol main.cpp)
+add_executable(2024-I
+        Compi/S3/lab3-2_sol.cpp
+)
