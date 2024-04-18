@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/Users/jeffr/GitHub/2024-I/cmake-build-debug/
 
 build cmake_object_order_depends_target_DB2: phony || CMakeFiles/DB2.dir
 
-build CMakeFiles/DB2.dir/DBII/S3/lab2/p1.cpp.obj: CXX_COMPILER__DB2_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/DBII/S3/lab2/p1.cpp || cmake_object_order_depends_target_DB2
-  DEP_FILE = CMakeFiles\DB2.dir\DBII\S3\lab2\p1.cpp.obj.d
+build CMakeFiles/DB2.dir/DBII/S3/lab2/p1-vilchez.cpp.obj: CXX_COMPILER__DB2_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/DBII/S3/lab2/p1-vilchez.cpp || cmake_object_order_depends_target_DB2
+  DEP_FILE = CMakeFiles\DB2.dir\DBII\S3\lab2\p1-vilchez.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\DB2.dir
   OBJECT_FILE_DIR = CMakeFiles\DB2.dir\DBII\S3\lab2
@@ -63,7 +63,7 @@ build CMakeFiles/DB2.dir/DBII/S3/lab2/p1.cpp.obj: CXX_COMPILER__DB2_unscanned_De
 #############################################
 # Link the executable DB2.exe
 
-build DB2.exe: CXX_EXECUTABLE_LINKER__DB2_Debug CMakeFiles/DB2.dir/DBII/S3/lab2/p1.cpp.obj
+build DB2.exe: CXX_EXECUTABLE_LINKER__DB2_Debug CMakeFiles/DB2.dir/DBII/S3/lab2/p1-vilchez.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DB2.dir

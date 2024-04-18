@@ -155,9 +155,9 @@ private:
 
 				file.seekg(sizeof(int) + pos_node * sizeof(Record) + sizeof(int) + sizeof(a.nombre) + sizeof(int) + sizeof(long), ios::beg);
 				file.write((char *)(&indx), sizeof(int));
-				return;
+			} else {
+				insert(a.right, record, file);
 			}
-			insert(a.right, record, file);
 		}
 		else if (record.cod < a.cod)
 		{
@@ -170,9 +170,9 @@ private:
 
 				file.seekg(sizeof(int) + pos_node * sizeof(Record) + sizeof(int) + sizeof(a.nombre) + sizeof(int), ios::beg);
 				file.write((char *)(&indx), sizeof(int));
-				return;
+			} else {
+				insert(a.left, record, file);
 			}
-			insert(a.left, record, file);
 		}
 
 		balance(pos_node, file);
@@ -227,7 +227,9 @@ private:
 		file.seekg(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.read((char *)(&a), sizeof(Record));
 
-		return height(a.right, file) - height(a.left, file);
+		int h = height(a.left, file) - height(a.right, file);
+
+		return h;
 	}
 
 	void updateHeight(long pos_node, fstream &file)
@@ -252,8 +254,16 @@ private:
 		file.seekg(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.read((char *)(&a), sizeof(Record));
 
+		int n2 = a.left;
+
+		if (pos_node == pos_root) {
+			pos_root = a.left;
+			file.seekp(0, ios::beg);
+			file.write((char *) (&pos_root), sizeof(long));
+		}
+
 		Record b;
-		file.seekg(sizeof(long) + a.left * sizeof(Record), ios::beg);
+		file.seekg(sizeof(long) + n2 * sizeof(Record), ios::beg);
 		file.read((char *)(&b), sizeof(Record));
 
 		a.left = b.right;
@@ -265,10 +275,11 @@ private:
 		file.seekp(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.write((char *)(&a), sizeof(Record));
 
-		file.seekp(sizeof(long) + a.left * sizeof(Record), ios::beg);
+		file.seekp(sizeof(long) + n2 * sizeof(Record), ios::beg);
 		file.write((char *)(&b), sizeof(Record));
 	}
 
+	// TODO: Actualizar el root en el archivo
 	void RR(long pos_node, fstream &file)
 	{
 		if (pos_node == -1) return;
@@ -277,8 +288,16 @@ private:
 		file.seekg(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.read((char *)(&a), sizeof(Record));
 
+		int n2 = a.right;
+
+		if (pos_node == pos_root) {
+			pos_root = a.right;
+			file.seekp(0, ios::beg);
+			file.write((char *) (&pos_root), sizeof(long));
+		}
+
 		Record b;
-		file.seekg(sizeof(long) + a.right * sizeof(Record), ios::beg);
+		file.seekg(sizeof(long) + n2 * sizeof(Record), ios::beg);
 		file.read((char *)(&b), sizeof(Record));
 
 		a.right = b.left;
@@ -290,7 +309,7 @@ private:
 		file.seekp(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.write((char *)(&a), sizeof(Record));
 
-		file.seekp(sizeof(long) + a.right * sizeof(Record), ios::beg);
+		file.seekp(sizeof(long) + n2 * sizeof(Record), ios::beg);
 		file.write((char *)(&b), sizeof(Record));
 	}
 
@@ -302,7 +321,7 @@ private:
 		file.seekg(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.read((char *)(&a), sizeof(Record));
 
-		if (balancingFactor(a.left, file) >= 0) 
+		if (balancingFactor(a.left, file) >= 0)
 			LL(pos_node, file);
 		else {
 			RR(a.left, file);
@@ -330,13 +349,11 @@ private:
 	{
 		if (pos_node == -1) return;
 
-		Record a;
-		file.seekg(sizeof(long) + pos_node * sizeof(Record), ios::beg);
-		file.read((char *)(&a), sizeof(Record));
+		int h = balancingFactor(pos_node, file);
 
-		if (balancingFactor(pos_node, file) > 1)
+		if (h > 1)
 			left_rotate(pos_node, file);
-		else if (balancingFactor(pos_node, file) < -1)
+		else if (h < -1)
 			right_rotate(pos_node, file);
 		else
 			updateHeight(pos_node, file);
@@ -351,17 +368,26 @@ void writeFile(string filename)
 	AVLFile file(filename);
 
 	Record r1 = {1001, "Juan", 1};
-	Record r2 = {1008, "Pedro", 5};
-	Record r3 = {1002, "Maria", 2};
+	Record r2 = {1002, "Maria", 2};
+	Record r3 = {1003, "Luis", 3};
 	Record r4 = {1004, "Jose", 4};
-	Record r5 = {1003, "Luis", 3};
-	Record r6 = {1009, "Carlos", 9};
-	file.insert(r1);
+	Record r5 = {1005, "Miguel", 5};
 	file.insert(r2);
-	file.insert(r3);
 	file.insert(r4);
-	file.insert(r5);
-	file.insert(r6);
+	file.insert(r3);
+
+//	Record r1 = {1001, "Juan", 1};
+//	Record r2 = {1008, "Pedro", 5};
+//	Record r3 = {1002, "Maria", 2};
+//	Record r4 = {1004, "Jose", 4};
+//	Record r5 = {1003, "Luis", 3};
+//	Record r6 = {1009, "Carlos", 9};
+//	file.insert(r1);
+//	file.insert(r2);
+//	file.insert(r3);
+//	file.insert(r4);
+//	file.insert(r5);
+//	file.insert(r6);
 }
 
 void readFile(string filename)
