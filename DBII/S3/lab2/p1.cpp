@@ -12,8 +12,8 @@ struct Record {
   int ciclo;
 
   int height;
-  int left = -1;
-  int right = -1;
+  long left = -1;
+  __LONG32 right = -1;
 
   void setData() {
 		cout << "Codigo:";
@@ -29,22 +29,10 @@ struct Record {
 	void showData() {
 		cout << endl << "Codigo: " << cod;
 		cout << endl << "Nombre: " << nombre;
-    cout << endl << "Carrera: " << carrera;
+    	cout << endl << "Carrera: " << carrera;
 		cout << endl << "Ciclo : " << ciclo << endl;
 	}   
 };
-
-Record readRecord(fstream &file, long pos){
-  Record record;
-  file.seekg(pos + sizeof(Record) + sizeof(long), ios::beg);
-  file.read((char *)&record, sizeof(Record));
-  return record;
-}
-
-// void writeRecord(fstream &file, long pos, Record &record){
-//   file.seekp(pos + sizeof(Record) + sizeof(long), ios::beg);
-//   file.write((char *)&record, sizeof(Record));
-// }
 
 class AVLFile {
 private:
@@ -53,7 +41,7 @@ private:
 
 public:
   AVLFile(string filename): filename(filename){
-    fstream file(filename, ios::in | ios::app | ios::binary);
+    fstream file(filename, ios::in | ios::out | ios::binary);
 
     if (!file.is_open()){
       cerr << "Error al abrir el archivo" << endl;
@@ -87,18 +75,20 @@ public:
   }
 
   Record find(int key){
-    fstream file(filename, ios::in | ios::app | ios::binary);
+    fstream file(filename, ios::in | ios::out | ios::binary);
 
     if (!file.is_open()){
       cerr << "Error al abrir el archivo" << endl;
       exit(1);
     }
 
-    return find(file, pos_root, key);
+    Record record = find(file, pos_root, key);
+    file.close();
+    return record;
   }
 
   void insert(Record record){
-    fstream file(filename, ios::in | ios::app | ios::binary);
+    fstream file(filename, ios::in | ios::out | ios::binary);
 
     if (!file.is_open()){
       cerr << "Error al abrir el archivo" << endl;
@@ -119,28 +109,19 @@ public:
 private:
   Record find(fstream &file, long pos_node, int key){
     if (pos_node == -1){
-      Record record;
-      record.cod = -1;
-      return record;
+      return {};
     }
 
-    Record record = readRecord(file, pos_node);
+    Record record;
+    file.seekg(pos_node*sizeof(Record) + sizeof(long), ios::beg);
+    file.read((char *)&record, sizeof(Record));
 
-    if (record.cod == key){
-      return record;
-    } else if (record.cod < key){
-      return find(file, record.right, key);
-    } else {
+    if (key < record.cod)
       return find(file, record.left, key);
-    }
-
-    // if (record.cod == key){
-    //   return record;
-    // } else if (record.cod < key){
-    //   return find(file, record.right, key);
-    // } else {
-    //   return find(file, record.left, key);
-    // }
+    else if (key > record.cod)
+      return find(file, record.right, key);
+    else
+      return record;
   }
 
   void insert(fstream &file, long &pos_node, Record &record){
@@ -148,8 +129,21 @@ private:
       pos_node = 1;
       file.seekg(0, ios::beg);
       file.write((char *)&pos_node, sizeof(long));
-      file.seekp(0, ios::end);
       file.write((char *)&record, sizeof(Record));
+      return;
+    }
+
+    Record aux;
+    file.seekg(pos_node*sizeof(Record) + sizeof(long), ios::beg);
+    file.read((char *)&aux, sizeof(Record));
+
+    if (record.cod < aux.cod){
+      insert(file, aux.left, record);
+    } else if (record.cod > aux.cod){
+      insert(file, aux.right, record);
+    } else {
+      cerr << "El registro ya existe" << endl;
+      return;
     }
   }
 

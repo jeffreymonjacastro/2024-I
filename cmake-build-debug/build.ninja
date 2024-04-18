@@ -41,37 +41,37 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/jeffr/GitHub/2024-I/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target 2024-I
+# Object build statements for EXECUTABLE target DB2
 
 
 #############################################
-# Order-only phony target for 2024-I
+# Order-only phony target for DB2
 
-build cmake_object_order_depends_target_2024-I: phony || CMakeFiles/2024-I.dir
+build cmake_object_order_depends_target_DB2: phony || CMakeFiles/DB2.dir
 
-build CMakeFiles/2024-I.dir/Compi/S3/lab3-2_sol.cpp.obj: CXX_COMPILER__2024-I_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S3/lab3-2_sol.cpp || cmake_object_order_depends_target_2024-I
-  DEP_FILE = CMakeFiles\2024-I.dir\Compi\S3\lab3-2_sol.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\2024-I.dir
-  OBJECT_FILE_DIR = CMakeFiles\2024-I.dir\Compi\S3
+build CMakeFiles/DB2.dir/DBII/S3/lab2/p1.cpp.obj: CXX_COMPILER__DB2_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/DBII/S3/lab2/p1.cpp || cmake_object_order_depends_target_DB2
+  DEP_FILE = CMakeFiles\DB2.dir\DBII\S3\lab2\p1.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\DB2.dir
+  OBJECT_FILE_DIR = CMakeFiles\DB2.dir\DBII\S3\lab2
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target 2024-I
+# Link build statements for EXECUTABLE target DB2
 
 
 #############################################
-# Link the executable 2024-I.exe
+# Link the executable DB2.exe
 
-build 2024-I.exe: CXX_EXECUTABLE_LINKER__2024-I_Debug CMakeFiles/2024-I.dir/Compi/S3/lab3-2_sol.cpp.obj
+build DB2.exe: CXX_EXECUTABLE_LINKER__DB2_Debug CMakeFiles/DB2.dir/DBII/S3/lab2/p1.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\2024-I.dir
+  OBJECT_DIR = CMakeFiles\DB2.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = 2024-I.exe
-  TARGET_IMPLIB = lib2024-I.dll.a
-  TARGET_PDB = 2024-I.exe.dbg
+  TARGET_FILE = DB2.exe
+  TARGET_IMPLIB = libDB2.dll.a
+  TARGET_PDB = DB2.exe.dbg
 
 
 #############################################
@@ -99,7 +99,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build 2024-I: phony 2024-I.exe
+build DB2: phony DB2.exe
 
 # =============================================================================
 # Folder targets.
@@ -109,7 +109,7 @@ build 2024-I: phony 2024-I.exe
 #############################################
 # Folder: C:/Users/jeffr/GitHub/2024-I/cmake-build-debug
 
-build all: phony 2024-I.exe
+build all: phony DB2.exe
 
 # =============================================================================
 # Built-in targets

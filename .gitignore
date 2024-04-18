@@ -2,8 +2,8 @@
 __pycache__/
 venv/
 
-.idea/*
-cmake-build-debug
+# .idea/*
+# cmake-build-debug
 
 # Compiled class file
 *.class

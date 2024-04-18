@@ -3,6 +3,5 @@ project(2024_I)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(2024-I
-        Compi/S3/lab3-2_sol.cpp
-)
+add_executable(DB2
+        DBII/S3/lab2/p1.cpp)
