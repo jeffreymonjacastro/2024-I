@@ -20,6 +20,8 @@ struct Record {
 		cin >> cod;
 		cout << "Nombre: ";
 		cin >> nombre;
+    cout << "Carrera: ";
+    cin >> carrera;
 		cout << "Ciclo: ";
 		cin >> ciclo;
 	}
@@ -27,6 +29,7 @@ struct Record {
 	void showData() {
 		cout << endl << "Codigo: " << cod;
 		cout << endl << "Nombre: " << nombre;
+    cout << endl << "Carrera: " << carrera;
 		cout << endl << "Ciclo : " << ciclo << endl;
 	}   
 };
@@ -78,9 +81,9 @@ public:
       exit(1);
     }
     
-    file.seekg(0, ios::end);
+    file.seekg(sizeof(long), ios::end);
     
-    return (file.tellg() / sizeof(Record)) - sizeof(long);
+    return (file.tellg() / sizeof(Record));
   }
 
   Record find(int key){
@@ -115,14 +118,59 @@ public:
 
 private:
   Record find(fstream &file, long pos_node, int key){
+    if (pos_node == -1){
+      Record record;
+      record.cod = -1;
+      return record;
+    }
 
+    Record record = readRecord(file, pos_node);
+
+    if (record.cod == key){
+      return record;
+    } else if (record.cod < key){
+      return find(file, record.right, key);
+    } else {
+      return find(file, record.left, key);
+    }
+
+    // if (record.cod == key){
+    //   return record;
+    // } else if (record.cod < key){
+    //   return find(file, record.right, key);
+    // } else {
+    //   return find(file, record.left, key);
+    // }
   }
 
   void insert(fstream &file, long &pos_node, Record &record){
-
+    if (pos_node == -1){
+      pos_node = 1;
+      file.seekg(0, ios::beg);
+      file.write((char *)&pos_node, sizeof(long));
+      file.seekp(0, ios::end);
+      file.write((char *)&record, sizeof(Record));
+    }
   }
 
   void inorder(long pos_node, vector<Record> &result){
 
   }
 };
+
+int main(){
+  AVLFile avl("data.dat");
+
+  Record al1{1, "Juan", "CS", 5};
+
+  cout << avl.size() << endl;
+
+  avl.insert(al1);
+
+  cout << avl.size() << endl;
+
+  avl.find(1).showData();
+
+
+  return 0;
+}
