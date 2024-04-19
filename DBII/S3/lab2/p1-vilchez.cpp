@@ -40,7 +40,7 @@ class AVLFile
 private:
 	string filename;
 	long pos_root;
-
+	long pre_root;
 public:
 	AVLFile(string filename)
 	{
@@ -72,7 +72,7 @@ public:
 	void insert(Record record)
 	{
 		fstream file(this->filename, ios::binary | ios::in | ios::out);
-		insert(pos_root, record, file);
+		insert(-1, pos_root, record, file);
 		file.close();
 	}
 
@@ -130,7 +130,7 @@ private:
 		}
 	}
 
-	void insert(long pos_node, Record record, fstream &file)
+	void insert(long parent, long pos_node, Record record, fstream &file)
 	{
 		if (pos_node == -1)
 		{
@@ -156,7 +156,7 @@ private:
 				file.seekg(sizeof(int) + pos_node * sizeof(Record) + sizeof(int) + sizeof(a.nombre) + sizeof(int) + sizeof(long), ios::beg);
 				file.write((char *)(&indx), sizeof(int));
 			} else {
-				insert(a.right, record, file);
+				insert(pos_node, a.right, record, file);
 			}
 		}
 		else if (record.cod < a.cod)
@@ -171,11 +171,11 @@ private:
 				file.seekg(sizeof(int) + pos_node * sizeof(Record) + sizeof(int) + sizeof(a.nombre) + sizeof(int), ios::beg);
 				file.write((char *)(&indx), sizeof(int));
 			} else {
-				insert(a.left, record, file);
+				insert(pos_node, a.left, record, file);
 			}
 		}
 
-		balance(pos_node, file);
+		balance(parent, pos_node, file);
 	}
 
 	vector<Record> inorder(long pos_node, vector<Record> &result, fstream &file)
@@ -246,7 +246,7 @@ private:
 		file.write((char *)(&a), sizeof(Record));
 	}
 
-	void LL(long pos_node, fstream &file)
+	void LL(long parent, long pos_node, fstream &file, bool flag = false)
 	{
 		if (pos_node == -1) return;
 
@@ -270,17 +270,23 @@ private:
 		b.right = pos_node;
 
 		a.height = max(height(a.left, file), height(a.right, file)) + 1;
-		b.height = max(height(b.left, file), height(b.right, file)) + 1;
-
 		file.seekp(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.write((char *)(&a), sizeof(Record));
 
+		b.height = max(height(b.left, file), height(b.right, file)) + 1;
 		file.seekp(sizeof(long) + n2 * sizeof(Record), ios::beg);
 		file.write((char *)(&b), sizeof(Record));
+
+		Record c;
+		file.seekg(sizeof(long) + parent * sizeof(Record), ios::beg);
+		file.read((char *)(&c), sizeof(Record));
+
+		c.left = n2;
+		file.seekp(sizeof(long) + parent * sizeof(Record), ios::beg);
+		file.write((char *)(&c), sizeof(Record));
 	}
 
-	// TODO: Actualizar el root en el archivo
-	void RR(long pos_node, fstream &file)
+	void RR(long parent, long pos_node, fstream &file, bool flag = false)
 	{
 		if (pos_node == -1) return;
 
@@ -304,16 +310,23 @@ private:
 		b.left = pos_node;
 
 		a.height = max(height(a.left, file), height(a.right, file)) + 1;
-		b.height = max(height(b.left, file), height(b.right, file)) + 1;
-
 		file.seekp(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.write((char *)(&a), sizeof(Record));
 
+		b.height = max(height(b.left, file), height(b.right, file)) + 1;
 		file.seekp(sizeof(long) + n2 * sizeof(Record), ios::beg);
 		file.write((char *)(&b), sizeof(Record));
+
+		Record c;
+		file.seekg(sizeof(long) + parent * sizeof(Record), ios::beg);
+		file.read((char *)(&c), sizeof(Record));
+
+		c.right = n2;
+		file.seekp(sizeof(long) + parent * sizeof(Record), ios::beg);
+		file.write((char *)(&c), sizeof(Record));
 	}
 
-	void left_rotate(long pos_node, fstream &file)
+	void left_rotate(long parent, long pos_node, fstream &file)
 	{
 		if (pos_node == -1) return;
 
@@ -322,14 +335,14 @@ private:
 		file.read((char *)(&a), sizeof(Record));
 
 		if (balancingFactor(a.left, file) >= 0)
-			LL(pos_node, file);
+			LL(parent, pos_node, file);
 		else {
-			RR(a.left, file);
-			LL(pos_node, file);
+			RR(parent, a.left, file);
+			LL(parent, pos_node, file);
 		}
 	}
 
-	void right_rotate(long pos_node, fstream &file)
+	void right_rotate(long parent, long pos_node, fstream &file)
 	{
 		if (pos_node == -1) return;
 
@@ -338,23 +351,23 @@ private:
 		file.read((char *)(&a), sizeof(Record));
 
 		if (balancingFactor(a.right, file) <= 0) 
-			RR(pos_node, file);
+			RR(parent, pos_node, file);
 		else {
-			LL(a.right, file);
-			RR(pos_node, file);
+			LL(parent, a.right, file);
+			RR(parent, pos_node, file);
 		}
 	}
 
-	void balance(long pos_node, fstream &file)
+	void balance(long parent, long pos_node, fstream &file)
 	{
 		if (pos_node == -1) return;
 
 		int h = balancingFactor(pos_node, file);
 
 		if (h > 1)
-			left_rotate(pos_node, file);
+			left_rotate(parent, pos_node, file);
 		else if (h < -1)
-			right_rotate(pos_node, file);
+			right_rotate(parent, pos_node, file);
 		else
 			updateHeight(pos_node, file);
 	}
@@ -367,14 +380,19 @@ void writeFile(string filename)
 	file2.close();
 	AVLFile file(filename);
 
-	Record r1 = {1001, "Juan", 1};
-	Record r2 = {1002, "Maria", 2};
-	Record r3 = {1003, "Luis", 3};
-	Record r4 = {1004, "Jose", 4};
-	Record r5 = {1005, "Miguel", 5};
+	Record r0 = {1000, "Juan", 1};
+	Record r1 = {1001, "Maria", 2};
+	Record r2 = {1002, "Luis", 3};
+	Record r3 = {1003, "Jose", 4};
+	Record r4 = {1004, "Miguel", 5};
+	Record r5 = {1005, "Fabricio", 5};
+
 	file.insert(r2);
-	file.insert(r4);
-	file.insert(r3);
+	file.insert(r0);
+	file.insert(r1);
+
+
+
 
 //	Record r1 = {1001, "Juan", 1};
 //	Record r2 = {1008, "Pedro", 5};
@@ -395,15 +413,15 @@ void readFile(string filename)
 	AVLFile file(filename);
 	cout << "--------- show all sorted data -----------\n";
 	file.printAll();
-	vector<Record> result = file.inorder();
-	for (Record re : result)
-	{
-		re.showData();
-	}
-
-	cout << "--------- find data -----------\n";
-	Record record = file.find(1002);
-	record.showData();
+//	vector<Record> result = file.inorder();
+//	for (Record re : result)
+//	{
+//		re.showData();
+//	}
+//
+//	cout << "--------- find data -----------\n";
+//	Record record = file.find(1002);
+//	record.showData();
 }
 
 int main()
