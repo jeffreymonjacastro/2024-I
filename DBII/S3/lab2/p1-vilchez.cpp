@@ -278,10 +278,16 @@ private:
 		file.write((char *)(&b), sizeof(Record));
 
 		Record c;
+		if (flag){
+			parent++;
+		}
 		file.seekg(sizeof(long) + parent * sizeof(Record), ios::beg);
 		file.read((char *)(&c), sizeof(Record));
-
-		c.left = n2;
+		if(flag)
+			c.right = n2;
+		else
+			c.left = n2;
+		//c.left = n2;
 		file.seekp(sizeof(long) + parent * sizeof(Record), ios::beg);
 		file.write((char *)(&c), sizeof(Record));
 	}
@@ -289,7 +295,6 @@ private:
 	void RR(long parent, long pos_node, fstream &file, bool flag = false)
 	{
 		if (pos_node == -1) return;
-
 		Record a;
 		file.seekg(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.read((char *)(&a), sizeof(Record));
@@ -318,14 +323,22 @@ private:
 		file.write((char *)(&b), sizeof(Record));
 
 		Record c;
+		if (flag)
+			parent++;
+		//parent++;
 		file.seekg(sizeof(long) + parent * sizeof(Record), ios::beg);
 		file.read((char *)(&c), sizeof(Record));
 
-		c.right = n2;
+		if (flag){
+			c.left = n2;
+		}else{
+			c.right = n2;
+		}
 		file.seekp(sizeof(long) + parent * sizeof(Record), ios::beg);
 		file.write((char *)(&c), sizeof(Record));
 	}
 
+	// LR rotation
 	void left_rotate(long parent, long pos_node, fstream &file)
 	{
 		if (pos_node == -1) return;
@@ -337,7 +350,7 @@ private:
 		if (balancingFactor(a.left, file) >= 0)
 			LL(parent, pos_node, file);
 		else {
-			RR(parent, a.left, file);
+			RR(parent, a.left, file, true);
 			LL(parent, pos_node, file);
 		}
 	}
@@ -353,7 +366,7 @@ private:
 		if (balancingFactor(a.right, file) <= 0) 
 			RR(parent, pos_node, file);
 		else {
-			LL(parent, a.right, file);
+			LL(parent, a.right, file, true);
 			RR(parent, pos_node, file);
 		}
 	}
@@ -386,11 +399,16 @@ void writeFile(string filename)
 	Record r3 = {1003, "Jose", 4};
 	Record r4 = {1004, "Miguel", 5};
 	Record r5 = {1005, "Fabricio", 5};
-
-	file.insert(r2);
-	file.insert(r0);
+	Record r6 = {1006, "Carlos", 6};
+	Record r7 = {1007, "Pedro", 7};
+	Record r8 = {1008, "Jorge", 8};
+	Record r9 = {1009, "Raul", 9};
 	file.insert(r1);
-
+	file.insert(r8);
+	file.insert(r2);
+	file.insert(r9);
+	file.insert(r4);
+	file.insert(r3);
 
 
 
