@@ -41,37 +41,37 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/jeffr/GitHub/2024-I/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target DB2
+# Object build statements for EXECUTABLE target DB
 
 
 #############################################
-# Order-only phony target for DB2
+# Order-only phony target for DB
 
-build cmake_object_order_depends_target_DB2: phony || CMakeFiles/DB2.dir
+build cmake_object_order_depends_target_DB: phony || CMakeFiles/DB.dir
 
-build CMakeFiles/DB2.dir/DBII/S3/lab2/p1-avance.cpp.obj: CXX_COMPILER__DB2_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/DBII/S3/lab2/p1-avance.cpp || cmake_object_order_depends_target_DB2
-  DEP_FILE = CMakeFiles\DB2.dir\DBII\S3\lab2\p1-avance.cpp.obj.d
+build CMakeFiles/DB.dir/Codeforces/Contest/p1.cpp.obj: CXX_COMPILER__DB_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Codeforces/Contest/p1.cpp || cmake_object_order_depends_target_DB
+  DEP_FILE = CMakeFiles\DB.dir\Codeforces\Contest\p1.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\DB2.dir
-  OBJECT_FILE_DIR = CMakeFiles\DB2.dir\DBII\S3\lab2
+  OBJECT_DIR = CMakeFiles\DB.dir
+  OBJECT_FILE_DIR = CMakeFiles\DB.dir\Codeforces\Contest
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target DB2
+# Link build statements for EXECUTABLE target DB
 
 
 #############################################
-# Link the executable DB2.exe
+# Link the executable DB.exe
 
-build DB2.exe: CXX_EXECUTABLE_LINKER__DB2_Debug CMakeFiles/DB2.dir/DBII/S3/lab2/p1-avance.cpp.obj
+build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/Codeforces/Contest/p1.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\DB2.dir
+  OBJECT_DIR = CMakeFiles\DB.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = DB2.exe
-  TARGET_IMPLIB = libDB2.dll.a
-  TARGET_PDB = DB2.exe.dbg
+  TARGET_FILE = DB.exe
+  TARGET_IMPLIB = libDB.dll.a
+  TARGET_PDB = DB.exe.dbg
 
 
 #############################################
@@ -99,7 +99,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build DB2: phony DB2.exe
+build DB: phony DB.exe
 
 # =============================================================================
 # Folder targets.
@@ -109,7 +109,7 @@ build DB2: phony DB2.exe
 #############################################
 # Folder: C:/Users/jeffr/GitHub/2024-I/cmake-build-debug
 
-build all: phony DB2.exe
+build all: phony DB.exe
 
 # =============================================================================
 # Built-in targets

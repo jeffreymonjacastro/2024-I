@@ -3,6 +3,7 @@ project(2024_I)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(DB2
-        DBII/S3/lab2/p1-avance.cpp
+add_executable(DB
+        Codeforces/Contest/p1.cpp
+#        Codeforces/Contest/p2.cpp
 )

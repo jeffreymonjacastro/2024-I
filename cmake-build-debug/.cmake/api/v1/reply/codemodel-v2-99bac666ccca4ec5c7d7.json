@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "DB2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-DB2-Debug-4586eb7ca2f37fea69aa.json",
-					"name" : "DB2",
+					"id" : "DB::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DB-Debug-2685d0b9b8be87e7921c.json",
+					"name" : "DB",
 					"projectIndex" : 0
 				}
 			]
