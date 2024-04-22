@@ -21,30 +21,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DBII/S3/lab2.2/p1-vilchez.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/Contest/p1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Codeforces/Contest/p1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/RandomFile.h" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/RandomFile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/avl.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/avl.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/avl.h" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/avl.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/avlfile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/avlfile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/bst.h" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/bst.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/chavez.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/chavez.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/data.dat" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/data.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/node.h" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/node.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/other/avlfile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/other/avlfile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/other/data.dat" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/other/data.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/other/p1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/other/p1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/p1-terminado.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/p1-terminado.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/p1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/p1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/p2-terminado.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/p2-terminado.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2/prueba.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/prueba.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-99bac666ccca4ec5c7d7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-20T21-37-02-0943.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-DB-Debug-2685d0b9b8be87e7921c.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DB.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DB.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
@@ -80,39 +61,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "CMake Application.2024_I.executor": "Run",
-    "CMake Application.DB.executor": "Run",
-    "CMake Application.DB2.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "structure.view.defaults.are.configured": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;CMake Application.2024_I.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.DB.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.DB2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="DB" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="DB" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="DB">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DB" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="DB" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="DB">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -132,6 +113,7 @@
       <workItem from="1713472434259" duration="20492000" />
       <workItem from="1713587536812" duration="9368000" />
       <workItem from="1713648186661" duration="3408000" />
+      <workItem from="1713799498527" duration="757000" />
     </task>
     <servers />
   </component>
