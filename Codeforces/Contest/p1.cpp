@@ -8,7 +8,7 @@ using namespace std;
 
 int main(){
 	ll n;
-	cin >> n; 
+	cin >> n;
 
 	vector<ll> a(n);
 	map<ll, ll> multiple;
