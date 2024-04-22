@@ -4,6 +4,5 @@ project(2024_I)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(DB
-        Codeforces/Contest/p1.cpp
-#        Codeforces/Contest/p2.cpp
+        DBII/S3/lab2.2/p1-vilchez.cpp
 )

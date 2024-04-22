@@ -49,11 +49,11 @@ cmake_ninja_workdir = C$:/Users/jeffr/GitHub/2024-I/cmake-build-debug/
 
 build cmake_object_order_depends_target_DB: phony || CMakeFiles/DB.dir
 
-build CMakeFiles/DB.dir/Codeforces/Contest/p1.cpp.obj: CXX_COMPILER__DB_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Codeforces/Contest/p1.cpp || cmake_object_order_depends_target_DB
-  DEP_FILE = CMakeFiles\DB.dir\Codeforces\Contest\p1.cpp.obj.d
+build CMakeFiles/DB.dir/DBII/S3/lab2.2/p1-vilchez.cpp.obj: CXX_COMPILER__DB_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/DBII/S3/lab2.2/p1-vilchez.cpp || cmake_object_order_depends_target_DB
+  DEP_FILE = CMakeFiles\DB.dir\DBII\S3\lab2.2\p1-vilchez.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\DB.dir
-  OBJECT_FILE_DIR = CMakeFiles\DB.dir\Codeforces\Contest
+  OBJECT_FILE_DIR = CMakeFiles\DB.dir\DBII\S3\lab2.2
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/DB.dir/Codeforces/Contest/p1.cpp.obj: CXX_COMPILER__DB_unscanne
 #############################################
 # Link the executable DB.exe
 
-build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/Codeforces/Contest/p1.cpp.obj
+build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/DBII/S3/lab2.2/p1-vilchez.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DB.dir
