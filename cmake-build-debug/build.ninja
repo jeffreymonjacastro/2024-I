@@ -73,6 +73,39 @@ build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/DBII/S3/lab2.1/p
   TARGET_IMPLIB = libDB.dll.a
   TARGET_PDB = DB.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target CPC
+
+
+#############################################
+# Order-only phony target for CPC
+
+build cmake_object_order_depends_target_CPC: phony || CMakeFiles/CPC.dir
+
+build CMakeFiles/CPC.dir/Codeforces/CPC/S3/A.cpp.obj: CXX_COMPILER__CPC_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Codeforces/CPC/S3/A.cpp || cmake_object_order_depends_target_CPC
+  DEP_FILE = CMakeFiles\CPC.dir\Codeforces\CPC\S3\A.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CPC.dir
+  OBJECT_FILE_DIR = CMakeFiles\CPC.dir\Codeforces\CPC\S3
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target CPC
+
+
+#############################################
+# Link the executable CPC.exe
+
+build CPC.exe: CXX_EXECUTABLE_LINKER__CPC_Debug CMakeFiles/CPC.dir/Codeforces/CPC/S3/A.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\CPC.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = CPC.exe
+  TARGET_IMPLIB = libCPC.dll.a
+  TARGET_PDB = CPC.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -99,6 +132,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build CPC: phony CPC.exe
+
 build DB: phony DB.exe
 
 # =============================================================================
@@ -109,7 +144,7 @@ build DB: phony DB.exe
 #############################################
 # Folder: C:/Users/jeffr/GitHub/2024-I/cmake-build-debug
 
-build all: phony DB.exe
+build all: phony DB.exe CPC.exe
 
 # =============================================================================
 # Built-in targets
