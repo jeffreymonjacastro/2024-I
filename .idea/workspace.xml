@@ -21,44 +21,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="Things">
-      <change afterPath="$PROJECT_DIR$/Compi/S4/Pruebita4.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S4/parseer_prueba_semana4.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S4/prueba4.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBII/S4/data1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBII/S4/datos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBII/S4/muchosdatos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBII/S4/sol.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/inventory/events/InventoryUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/inventory/events/InventoryUpdateNotifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S4/HashFile.h" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S4/HashFile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S4/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S4/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/inventory/application/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/inventory/application/InventoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/inventory/domain/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/inventory/domain/InventoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/orderdetail/application/OrderDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/orderdetail/application/OrderDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/orderdetail/domain/OrderDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/java/com/example/demo/orderdetail/domain/OrderDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/DBP-TA/s4_test_async/demo-sem4-2/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-93a7664135d78911f9a3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-24T02-06-42-0066.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-DB-Debug-d9516b082969e684a304.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DB.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DB.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/data.dat" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/data.dat" afterDir="false" />
-    </list>
+    <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="GG BD2, F Compi" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,7 +143,7 @@
       <workItem from="1713924368902" duration="1956000" />
       <workItem from="1713993689255" duration="607000" />
       <workItem from="1714104221462" duration="5967000" />
-      <workItem from="1714141333470" duration="4693000" />
+      <workItem from="1714141333470" duration="4949000" />
     </task>
     <task id="LOCAL-00001" summary="Things">
       <option name="closed" value="true" />
@@ -190,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713806294434</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="GG BD2, F Compi">
+      <option name="closed" value="true" />
+      <created>1714147349252</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714147349252</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,10 +172,22 @@
     <isAutomaticFoundErrors value="true" />
     <isAutomaticReloadCMake value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Things" />
-    <option name="LAST_COMMIT_MESSAGE" value="Things" />
+    <MESSAGE value="GG BD2, F Compi" />
+    <option name="LAST_COMMIT_MESSAGE" value="GG BD2, F Compi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

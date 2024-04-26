@@ -11,7 +11,7 @@ void writeFile(string filename){
 
     StaticHashFile file(filename, N_BUCKETS);
     Record record;
-    ifstream fileIn("../DBII/s4/muchosdatos.txt", ios::in);
+    ifstream fileIn("muchosdatos.txt", ios::in);
 	if (!fileIn.is_open()) exit(1);
 
 	cout << "-----------Writing file-----------" << endl;
