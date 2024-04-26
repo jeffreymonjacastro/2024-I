@@ -1,0 +1,8 @@
+Julia,CS,10
+Julia,CS,10
+Julia,CS,10
+Julia,CS,10
+Mario,IN,5
+Mario,IN,5
+Mario,IN,5
+Mario,IN,5

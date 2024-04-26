@@ -5,26 +5,52 @@ using namespace std;
 const int N_BUCKETS = 4;
 
 void writeFile(string filename){
+	// Clean file
+	ofstream file2(filename, ios::binary);
+	file2.close();
+
     StaticHashFile file(filename, N_BUCKETS);
     Record record;
-    for (int i = 0; i < 15; i++)
+    ifstream fileIn("../DBII/s4/muchosdatos.txt", ios::in);
+	if (!fileIn.is_open()) exit(1);
+
+	cout << "-----------Writing file-----------" << endl;
+
+    while(true)
     {
-        record.setData();
+        record.setData(fileIn);
+        if(fileIn.eof()) break;
+        record.showData();
+		cout << endl;
         file.writeRecord(record);
     }   
+    fileIn.close();
 }
 
 void readFile(string filename){
     StaticHashFile file(filename, N_BUCKETS);
     cout<<"--------- show all data -----------\n";
     file.scanAll();
-    cout<<"--------- search Pancho -----------\n";
-    Record record = file.search("Pancho");
-    record.showData();
+	cout<<"--------- search Natalia -----------\n";
+	Record record = file.search("Natalia");
+
+	if (record.nombre[0] != '\0'){
+		record.showData();
+		cout << endl;
+	} else
+		cout << "Record not found" << endl;
+
+	cout<<"--------- search Pancho -----------\n";
+	record = file.search("Pancho");
+
+	if (record.nombre[0] != '\0')
+		record.showData();
+	else
+		cout << "Record not found" << endl;
 }
 
 int main(){
-    writeFile("data.dat");
-    readFile("data.dat");
+    writeFile("data1.dat");
+    readFile("data1.dat");
     return 0;
 }
