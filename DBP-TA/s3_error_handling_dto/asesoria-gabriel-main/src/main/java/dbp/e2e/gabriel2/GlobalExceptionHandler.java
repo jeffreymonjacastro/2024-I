@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
-    // Exception for not found author
     @ExceptionHandler(AuthorNotFoundException.class)
     public ResponseEntity<String> handleAuthorNotFoundException(AuthorNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
