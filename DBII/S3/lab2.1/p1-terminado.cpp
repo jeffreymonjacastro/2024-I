@@ -470,8 +470,8 @@ void readFile(string filename)
 //	}
 //
 //	cout << "--------- find data -----------\n";
-//	Record record = file.find(1002);
-//	record.showData();
+	Record record = file.find(1007);
+	record.showData();
 }
 
 int main()
