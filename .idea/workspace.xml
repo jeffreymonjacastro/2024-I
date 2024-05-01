@@ -23,86 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="GG BD2, F Compi">
-      <change afterPath="$PROJECT_DIR$/CPC/exercises/ac/S4/A.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CPC/exercises/cf/S2/C.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CPC/exercises/cf/S3/A.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/exp/exp.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/exp/exp.hh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/exp/exp_parser.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/exp/exp_parser.hh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/exp/exp_test.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/exp/sol.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/imp/imp.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/imp/imp.hh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/imp/imp_interpreter.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/imp/imp_parser.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/imp/imp_parser.hh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/imp/imp_test.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/imp/sol.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compi/S5/lab4_imp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/B.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/selfTraining/B.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/B.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/selfTraining/B.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/CPC/S2/A.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/exercises/cf/S2/A.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/CPC/S2/B.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/exercises/cf/S2/B.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/CPC/S2/C.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/CPC/S2/sol.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/exercises/cf/S2/sol.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/CPC/S4/A.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/exercises/cf/S4/A.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/CPC/S4/B.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/exercises/cf/S4/B.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/CPC/S4/C.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/exercises/cf/S4/C.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/CPC/S4/D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/exercises/cf/S4/D.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/CPC/S4/sol.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/exercises/cf/S4/sol.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/Contest/p1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/contest/p1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/Contest/p2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/contest/p2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/SubarraySums.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/selfTraining/SubarraySums.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/cows.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/selfTraining/cows.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/sol.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/selfTraining/sol.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces/sol.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CPC/selfTraining/sol.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2.1/avl.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/avl.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2.1/data.dat" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/data.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S3/lab2.1/p1-terminado.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S3/lab2.1/p1-terminado.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-af5234860d294454748c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-811d2d2d0e82bdd88705.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-2d51b1468c3862edaf18.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-26T04-04-37-0523.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CPC-Debug-70304d7883d47cd0cca1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-c4745cdf0cce7946050b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/2024-I.dir/Compi/S3/lab3-2_sol.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/2024_I.dir/DBII/S2/FixedRecord.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/2024_I.dir/DBII/S2/lab1/p1.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CPC.dir/Codeforces/CPC/S3/A.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DB.dir/Codeforces/Contest/p1.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DB.dir/Codeforces/Contest/p2.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DB.dir/DBII/S3/lab2.1/p1-terminado.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DB.dir/DBII/S4/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DB2.dir/DBII/S3/lab2/chavez.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DB2.dir/DBII/S3/lab2/p1-avance.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DB2.dir/DBII/S3/lab2/p1-vilchez.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DB2.dir/DBII/S3/lab2/p1.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Karol.dir/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CPC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CPC.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compi/S5/imp/imp_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S5/imp/imp_test.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +169,7 @@
       <workItem from="1714430191862" duration="118000" />
       <workItem from="1714435522108" duration="27000" />
       <workItem from="1714436258207" duration="3608000" />
-      <workItem from="1714493547764" duration="4950000" />
+      <workItem from="1714493547764" duration="5588000" />
     </task>
     <task id="LOCAL-00001" summary="Things">
       <option name="closed" value="true" />

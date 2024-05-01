@@ -23,9 +23,11 @@ int main(int argc, const char *argv[]) {
 
 	} else {
 		program = new Program();
-		Exp *e = new BinaryExp(new NumberExp(2), new NumberExp(3), EXP);
-		Stm *s1 = new AssignStatement("x", e);
-		Stm *s2 = new PrintStatement(new IdExp("x"));
+		Exp *e1 = new BinaryExp(new NumberExp(8), new NumberExp(9), PLUS);
+		Exp *e2 = new BinaryExp(new NumberExp(4), new NumberExp(3), MULT);
+		Stm *s1 = new AssignStatement("x", e1);
+		Stm *s2 = new AssignStatement("y", e2);
+		Stm *s3 = new PrintStatement(new BinaryExp(new IdExp("x"), new IdExp("y"), PLUS));
 		program->add(s1);
 		program->add(s2);
 
