@@ -14,3 +14,5 @@ add_executable(Compi
 )
 
 add_executable(CPC CPC/exercises/ac/S4/A.cpp)
+
+add_executable(ADA ADA/MatrixMultiply.cpp)

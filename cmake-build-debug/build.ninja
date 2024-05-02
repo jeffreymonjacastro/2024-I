@@ -151,6 +151,39 @@ build CPC.exe: CXX_EXECUTABLE_LINKER__CPC_Debug CMakeFiles/CPC.dir/CPC/exercises
   TARGET_IMPLIB = libCPC.dll.a
   TARGET_PDB = CPC.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target ADA
+
+
+#############################################
+# Order-only phony target for ADA
+
+build cmake_object_order_depends_target_ADA: phony || CMakeFiles/ADA.dir
+
+build CMakeFiles/ADA.dir/ADA/MatrixMultiply.cpp.obj: CXX_COMPILER__ADA_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/ADA/MatrixMultiply.cpp || cmake_object_order_depends_target_ADA
+  DEP_FILE = CMakeFiles\ADA.dir\ADA\MatrixMultiply.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ADA.dir
+  OBJECT_FILE_DIR = CMakeFiles\ADA.dir\ADA
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ADA
+
+
+#############################################
+# Link the executable ADA.exe
+
+build ADA.exe: CXX_EXECUTABLE_LINKER__ADA_Debug CMakeFiles/ADA.dir/ADA/MatrixMultiply.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\ADA.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = ADA.exe
+  TARGET_IMPLIB = libADA.dll.a
+  TARGET_PDB = ADA.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -177,6 +210,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build ADA: phony ADA.exe
+
 build CPC: phony CPC.exe
 
 build Compi: phony Compi.exe
@@ -191,7 +226,7 @@ build DB: phony DB.exe
 #############################################
 # Folder: C:/Users/jeffr/GitHub/2024-I/cmake-build-debug
 
-build all: phony DB.exe Compi.exe CPC.exe
+build all: phony DB.exe Compi.exe CPC.exe ADA.exe
 
 # =============================================================================
 # Built-in targets
