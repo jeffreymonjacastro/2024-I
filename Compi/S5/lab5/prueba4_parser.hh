@@ -3,14 +3,14 @@
 
 #include <sstream>
 #include <iostream>
-#include <cstdlib>
+#include <stdlib.h>
 #include <cstring>
 #include <string>
 #include <fstream>
 
 #include <unordered_map>
 
-#include "imp.hh"
+#include "prueba4.hh"
 
 using namespace std;
 
@@ -18,9 +18,9 @@ using namespace std;
 class Token {
 public:
 	enum Type {
-		LPAREN = 0, RPAREN, PLUS, MINUS, MULT, DIV, EXP, NUM, ID, PRINT, SEMICOLON, ASSIGN, ERR, END
+		LPAREN = 0, RPAREN, PLUS, MINUS, MULT, DIV, EXP, SIN, COS, NUM, ID, PRINT, SEMICOLON, ASSIGN, ERR, END, SALTO
 	};
-	static const char *token_names[14];
+	static const char *token_names[17];
 	Type type;
 	string lexema;
 

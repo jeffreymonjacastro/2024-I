@@ -1,10 +1,9 @@
+#include "prueba4_parser.hh"
 
-#include "imp_parser.hh"
 
-
-const char *Token::token_names[14] = {"LPAREN", "RPAREN", "PLUS", "MINUS",
-									  "MULT", "DIV", "EXP",
-									  "NUM", "ID", "PRINT", "SEMICOLON", "ASSIGN", "ERR", "END"};
+const char *Token::token_names[17] = {"LPAREN", "RPAREN", "PLUS", "MINUS",
+									  "MULT", "DIV", "EXP", "SIN", "COS",
+									  "NUM", "ID", "PRINT", "SEMICOLON", "ASSIGN", "ERR", "END", "SALTO"};
 
 Token::Token(Type type) : type(type) { lexema = ""; }
 
@@ -23,10 +22,10 @@ std::ostream &operator<<(std::ostream &outs, const Token *tok) {
 	return outs << *tok;
 }
 
-
 Scanner::Scanner(const char *s) : input(s), first(0), current(0) {
 	reserved["print"] = Token::PRINT;
-
+	reserved["sin"] = Token::SIN;
+	reserved["cos"] = Token::COS;
 }
 
 Token *Scanner::nextToken() {
@@ -36,6 +35,7 @@ Token *Scanner::nextToken() {
 	c = nextChar();
 	while (c == ' ') c = nextChar();
 	if (c == '\0') return new Token(Token::END);
+	if (c == '\n') return new Token(Token::SALTO);
 	startLexema();
 	if (isdigit(c)) {
 		c = nextChar();
@@ -95,7 +95,7 @@ Token *Scanner::nextToken() {
 Scanner::~Scanner() {}
 
 char Scanner::nextChar() {
-	char c = input[current];
+	int c = input[current];
 	current++;
 	return c;
 }
@@ -184,7 +184,7 @@ Program *Parser::parseProgram() {
 	Program *p = new Program();
 	// parse statement list
 	p->add(parseStatement());
-	while (match(Token::SEMICOLON)) {
+	while (match(Token::SEMICOLON) || match(Token::SALTO)) {
 		p->add(parseStatement());
 	}
 	return p;
@@ -196,6 +196,7 @@ Program *Parser::parseProgram() {
  */
 Stm *Parser::parseStatement() {
 	Stm *s = NULL;
+	Exp *e;
 	if (match(Token::ID)) {
 		string lex = previous->lexema;
 		if (!match(Token::ASSIGN)) {
@@ -209,12 +210,12 @@ Stm *Parser::parseStatement() {
 			cout << "Error: esperaba ( " << endl;
 			exit(0);
 		}
-		s = new PrintStatement(parseExpression());
+		e = parseExpression();
 		if (!match(Token::RPAREN)) {
 			cout << "Error: esperaba )" << endl;
 			exit(0);
 		}
-		// s =
+		s = new PrintStatement(e);
 	} else {
 		cout << "No se encontro Statement" << endl;
 		exit(0);
@@ -263,6 +264,27 @@ Exp *Parser::parseFactor() {
 	if (match(Token::ID)) {
 		return new IdExp(previous->lexema);
 	}
+	if (match(Token::SIN) || match(Token::COS)){
+		Token::Type op = previous->type;
+
+		cout << "Lexema: " << previous->lexema << endl;
+
+		TrigonometryOp trigOp = (op == Token::SIN) ? SIN : COS;
+		if (!match(Token::LPAREN)){
+			cout << "Expecting left parenthesis" << endl;
+			exit(0);
+		}
+
+		Exp *e = parseExpression();
+
+		if (!match(Token::RPAREN)){
+			cout << "Expecting right parenthesis" << endl;
+			exit(0);
+		}
+
+		return new TrigExp(e, trigOp);
+	}
+
 	if (match(Token::LPAREN)) {
 		Exp *e = parseExpression();
 		if (!match(Token::RPAREN)) {

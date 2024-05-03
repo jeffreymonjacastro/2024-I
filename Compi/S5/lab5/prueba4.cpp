@@ -1,4 +1,5 @@
-#include "imp.hh"
+#include "prueba4.hh"
+#include <cmath>
 
 
 string Exp::binopToString(BinaryOp op) {
@@ -27,6 +28,8 @@ IdExp::IdExp(string id) : id(id) {}
 
 ParenthExp::ParenthExp(Exp *e) : e(e) {}
 
+TrigExp::TrigExp(Exp *e, TrigonometryOp op): e(e), op(op) {}
+
 Exp::~Exp() {}
 
 BinaryExp::~BinaryExp() {
@@ -39,6 +42,8 @@ NumberExp::~NumberExp() {}
 IdExp::~IdExp() {}
 
 ParenthExp::~ParenthExp() { delete e; }
+
+TrigExp::~TrigExp() { delete e; }
 
 
 // print
@@ -62,11 +67,17 @@ void ParenthExp::print() {
 	cout << ')';
 }
 
+void TrigExp::print(){
+	cout << (op == SIN ? "sin(" : "cos(");
+	e->print();
+	cout << ')';
+}
+
 // eval
-int BinaryExp::eval() {
-	int v1 = left->eval();
-	int v2 = right->eval();
-	int result = 0;
+double BinaryExp::eval() {
+	double v1 = left->eval();
+	double v2 = right->eval();
+	double result = 0;
 	switch (this->op) {
 		case PLUS:
 			result = v1 + v2;
@@ -91,11 +102,11 @@ int BinaryExp::eval() {
 	return result;
 }
 
-int NumberExp::eval() {
+double NumberExp::eval() {
 	return value;
 }
 
-int IdExp::eval() {
+double IdExp::eval() {
 	if (Program::memoria_check(id))
 		return Program::memoria_lookup(id);
 	else {
@@ -105,8 +116,24 @@ int IdExp::eval() {
 	return 0;
 }
 
-int ParenthExp::eval() {
+double ParenthExp::eval() {
 	return e->eval();
+}
+
+double TrigExp::eval() {
+	double v = e->eval();
+	double result;
+
+	switch(this->op) {
+		case SIN:
+			result = sin(v * M_PI / 180);
+			break;
+		case COS:
+			result = cos(v * M_PI / 180);
+	}
+
+	cout << result << endl;
+	return result;
 }
 
 
@@ -141,7 +168,7 @@ void PrintStatement::print() {
 }
 
 void PrintStatement::execute() {
-	int v = e->eval();
+	double v = e->eval();
 	cout << v << endl;
 }
 

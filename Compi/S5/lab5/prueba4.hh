@@ -16,12 +16,16 @@ enum BinaryOp {
 	PLUS, MINUS, MULT, DIV, EXP
 };
 
+enum TrigonometryOp {
+	SIN, COS
+};
+
 
 class Exp {
 public:
 	virtual void print() = 0;
 
-	virtual int eval() = 0;
+	virtual double eval() = 0;
 
 	static string binopToString(BinaryOp op);
 
@@ -37,7 +41,7 @@ public:
 
 	void print();
 
-	int eval();
+	double eval();
 
 	~BinaryExp();
 };
@@ -50,7 +54,7 @@ public:
 
 	void print();
 
-	int eval();
+	double eval();
 
 	~NumberExp();
 };
@@ -63,7 +67,7 @@ public:
 
 	void print();
 
-	int eval();
+	double eval();
 
 	~IdExp();
 };
@@ -71,14 +75,30 @@ public:
 class ParenthExp : public Exp {
 public:
 	Exp *e;
-
 	ParenthExp(Exp *e);
 
 	void print();
 
-	int eval();
+	double eval();
 
 	~ParenthExp();
+};
+
+
+
+class TrigExp : public Exp {
+public:
+	Exp *e;
+	TrigonometryOp op;
+
+	TrigExp(Exp *e, TrigonometryOp op);
+
+	void print();
+
+	double eval();
+
+	~TrigExp();
+
 };
 
 class Stm {
