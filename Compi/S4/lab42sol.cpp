@@ -157,16 +157,18 @@ private:
 
 	bool isAtEnd();
 
-	void parseExpression();
+	int parseExpression();
 
-	void parseTerm();
+	int parseTerm();
 
-	void parseFactor();
+	int parseFExp();
+
+	int parseFactor();
 
 public:
 	Parser(Scanner *scanner);
 
-	void parse();
+	int parse();
 };
 
 
@@ -208,52 +210,79 @@ Parser::Parser(Scanner *sc) : scanner(sc) {
 	return;
 };
 
-void Parser::parse() {
+int Parser::parse() {
 	// get first token
 	current = scanner->nextToken();
 	if (check(Token::ERR)) {
 		cout << "Error en scanner - caracter invalido" << endl;
 		exit(0);
 	}
-	parseExpression();
+	int v = parseExpression();
+
+	if (!match(Token::END)) {
+		cout << "Error: Esperaba fin de input, encontro: " << current << endl;
+		exit(0);
+	}
 
 	if (current) delete current;
-	return;
+	return v;
 }
 
-void Parser::parseExpression() {
-	parseTerm();
+int Parser::parseExpression() {
+	int accum, v;
+	accum = parseTerm();
 	while (match(Token::MINUS) || match(Token::PLUS)) {
-		parseFactor();
+		Token::Type op = previous->type;
+		v = parseTerm();
+		if (op == Token::PLUS) accum += v;
+		else accum -= v;
 	}
-	return;
+	return accum;
 }
 
-void Parser::parseTerm(){
-	parseFactor();
-	while(match(Token::MULT) || match(Token::DIV)){
-		parseFactor();
+int Parser::parseTerm() {
+	int accum, v;
+	accum = parseFExp();
+	while (match(Token::MULT) || match(Token::DIV)) {
+		Token::Type op = previous->type;
+		v = parseFExp();
+		if (op == Token::MULT) accum *= v;
+		else accum /= v;
 	}
-	return;
+	return accum;
 }
 
+int Parser::parseFExp() {
+	int accum, v;
+	int res = 1;
+	accum = parseFactor();
+	while (match(Token::POW)) {
+		v = parseFExp();
 
-void Parser::parseFactor() {
+		while(v > 0){
+			res *= accum;
+			v--;
+		}
+		return res;
+	}
+	return accum;
+}
+
+int Parser::parseFactor() {
 	if (match(Token::NUM)) {
-		// int v = stoi(previous->lexema);
-		return;
+		return stoi(previous->lexema);
 	}
 	if (match(Token::LPAREN)) {
-		parseExpression();
+		int v = parseExpression();
 		if (!match(Token::RPAREN)) {
 			cout << "Expecting right parenthesis" << endl;
 			exit(0);
 		}
-		return;
+		return v;
 	}
 	cout << "Couldn't find match for token: " << current->lexema << endl;
 	exit(0);
-	return;
+	return 0;
 }
 
 
@@ -269,9 +298,9 @@ int main(int argc, const char *argv[]) {
 	Scanner scanner(argv[1]);
 
 	Parser parser(&scanner);
-	parser.parse();
+	int v = parser.parse();
 
-	cout << "Parsing completo" << endl;
+	cout << "CALC: " << v << endl;
 
 	/*
 	Token* tk = scanner.nextToken();

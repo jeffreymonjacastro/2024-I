@@ -98,9 +98,7 @@ public:
 
 		int count = 0;
 		while (file.read((char *)(&record), sizeof(Record)))
-		{
 			cout << count++ << ": " << record.cod << " | " << record.nombre << " | " << record.ciclo << " | " << record.left << " | " << record.right << " | " << record.height << endl;
-		}
 		file.close();
 	}
 
@@ -119,17 +117,11 @@ private:
 		file.seekg(sizeof(long) + pos_node * sizeof(Record), ios::beg);
 		file.read((char *)&record, sizeof(Record));
 		if (key < record.cod)
-		{
 			return find(record.left, key, file);
-		}
 		else if (record.cod < key)
-		{
 			return find(record.right, key, file);
-		}
 		else
-		{
 			return record;
-		}
 	}
 
 	void insert(long parent, long pos_node, Record record, fstream &file)
@@ -155,7 +147,7 @@ private:
 				indx = file.tellp() / sizeof(Record);
 				file.write((char *)(&record), sizeof(Record));
 
-				file.seekg(sizeof(int) + pos_node * sizeof(Record) + sizeof(int) + sizeof(a.nombre) + sizeof(int) + sizeof(long), ios::beg);
+				file.seekg(sizeof(int) + (pos_node + 1) * sizeof(Record) - (sizeof(long) + sizeof(int)), ios::beg);
 				file.write((char *)(&indx), sizeof(int));
 			} else {
 				insert(pos_node, a.right, record, file);
@@ -170,7 +162,7 @@ private:
 				indx = file.tellg() / sizeof(Record);
 				file.write((char *)(&record), sizeof(Record));
 
-				file.seekg(sizeof(int) + pos_node * sizeof(Record) + sizeof(int) + sizeof(a.nombre) + sizeof(int), ios::beg);
+				file.seekg(sizeof(int) + (pos_node + 1) * sizeof(Record) - (2 * sizeof(long) + sizeof(int)), ios::beg);
 				file.write((char *)(&indx), sizeof(int));
 			} else {
 				insert(pos_node, a.left, record, file);

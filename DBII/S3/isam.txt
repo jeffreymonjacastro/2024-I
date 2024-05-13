@@ -1,0 +1,45 @@
+const int TAM_PAGE = 2048;
+
+struct IndexPage
+{
+    T keys[MI];
+    long pages[MI+1];
+    int n;
+};
+//MI*sizeof(T) + (MI+1)*sizeof(long) + sizeof(int) = TAM_PAGE;
+
+struct DataPage
+{
+    Record records[MD];
+    int n;
+    long nextPage;
+};
+//MD*sizeof(Record) + sizeof(int) + sizeof(long) = TAM_PAGE;
+
+Busqueda(key):
+- Abrir el index1 
+- Leer la entrada relacionada a key (pagina del siguiente index)
+- Abrir el index2
+- Leer la entrada relacionada a key (pagina del siguiente index)
+- Abrir el index3
+- Leer la entrada en el archivo de datos(pagina del archivo de datos)
+- Leer la pagina de datos y ubicas el registro con la key
+- Buscar en el encadenamiento de paginas
+:: O(L+1) + O(encadenamiento),  L total de niveles
+
+Insertar(record, key):
+- Abrir el index1 y localizamos la entrada  *
+- Abrir el index2 y localizamos la entrada  *
+- Abrir el index3 y localizamos la entrada  *
+- Leer la pagina de datos se lleva a la RAM *
+- Caso 1: pagina no llena
+  - Insertar el registro en dicha pagina
+  - Escribir la pagina en la misma posicion *
+- Caso 2: pagina si esta llena
+  - Crear nueva pagina de datos
+  - Agregar el nuevo registro a dicha pagina (o aplicar split)
+  - La pagina actual se enlaza con la pagina recien creada
+  - Escribir pagina actual y pagina enlazada *
+O(L) + O(encadenamiento)
+
+

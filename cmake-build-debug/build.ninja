@@ -49,11 +49,11 @@ cmake_ninja_workdir = C$:/Users/jeffr/GitHub/2024-I/cmake-build-debug/
 
 build cmake_object_order_depends_target_DB: phony || CMakeFiles/DB.dir
 
-build CMakeFiles/DB.dir/DBII/S4/main.cpp.obj: CXX_COMPILER__DB_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/DBII/S4/main.cpp || cmake_object_order_depends_target_DB
-  DEP_FILE = CMakeFiles\DB.dir\DBII\S4\main.cpp.obj.d
+build CMakeFiles/DB.dir/DBII/S7/avl.cpp.obj: CXX_COMPILER__DB_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/DBII/S7/avl.cpp || cmake_object_order_depends_target_DB
+  DEP_FILE = CMakeFiles\DB.dir\DBII\S7\avl.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\DB.dir
-  OBJECT_FILE_DIR = CMakeFiles\DB.dir\DBII\S4
+  OBJECT_FILE_DIR = CMakeFiles\DB.dir\DBII\S7
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/DB.dir/DBII/S4/main.cpp.obj: CXX_COMPILER__DB_unscanned_Debug C
 #############################################
 # Link the executable DB.exe
 
-build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/DBII/S4/main.cpp.obj
+build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/DBII/S7/avl.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DB.dir
@@ -82,23 +82,11 @@ build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/DBII/S4/main.cpp
 
 build cmake_object_order_depends_target_Compi: phony || CMakeFiles/Compi.dir
 
-build CMakeFiles/Compi.dir/Compi/S5/lab5/prueba4.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S5/lab5/prueba4.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S5\lab5\prueba4.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S4/lab42sol.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S4/lab42sol.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S4\lab42sol.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S5\lab5
-
-build CMakeFiles/Compi.dir/Compi/S5/lab5/prueba4_parser.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S5/lab5/prueba4_parser.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S5\lab5\prueba4_parser.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S5\lab5
-
-build CMakeFiles/Compi.dir/Compi/S5/lab5/prueba4_test.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S5/lab5/prueba4_test.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S5\lab5\prueba4_test.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S5\lab5
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S4
 
 
 # =============================================================================
@@ -108,7 +96,7 @@ build CMakeFiles/Compi.dir/Compi/S5/lab5/prueba4_test.cpp.obj: CXX_COMPILER__Com
 #############################################
 # Link the executable Compi.exe
 
-build Compi.exe: CXX_EXECUTABLE_LINKER__Compi_Debug CMakeFiles/Compi.dir/Compi/S5/lab5/prueba4.cpp.obj CMakeFiles/Compi.dir/Compi/S5/lab5/prueba4_parser.cpp.obj CMakeFiles/Compi.dir/Compi/S5/lab5/prueba4_test.cpp.obj
+build Compi.exe: CXX_EXECUTABLE_LINKER__Compi_Debug CMakeFiles/Compi.dir/Compi/S4/lab42sol.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Compi.dir
