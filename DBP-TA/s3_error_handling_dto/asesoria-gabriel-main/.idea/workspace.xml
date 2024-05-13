@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31906c3e-5578-4db0-9332-b07d41b06a8e" name="Changes" comment="Studying Spring Boot">
-      <change afterPath="$PROJECT_DIR$/src/test/java/dbp/e2e/gabriel2/author/AuthorDTOValidationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Codeforces/CPC/S3/A.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Codeforces/CPC/S3/sol.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad3741bb-d94d-4cac-8b95-fb5d90a451a3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ad3741bb-d94d-4cac-8b95-fb5d90a451a3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbp/e2e/gabriel2/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbp/e2e/gabriel2/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbp/e2e/gabriel2/author/domain/AuthorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbp/e2e/gabriel2/author/domain/AuthorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +110,7 @@
       <workItem from="1713544853347" duration="4974000" />
       <workItem from="1714257045338" duration="2305000" />
       <workItem from="1714353143856" duration="892000" />
+      <workItem from="1715603624015" duration="1052000" />
     </task>
     <task id="LOCAL-00001" summary="Studying Spring Boot">
       <option name="closed" value="true" />
