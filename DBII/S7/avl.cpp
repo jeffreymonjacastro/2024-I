@@ -64,13 +64,13 @@ public:
 		return records;
 	}
 
-//	vector<Record<TK>> rangeSearch(TK beginKey, TK endKey) {
-//		fstream file(this->filename, ios::binary | ios::in | ios::out);
-//		vector<Record<TK>> records;
-//		rangeSearch(records, pos_root, beginKey, endKey, file);
-//		file.close();
-//		return records;
-//	}
+	vector<Record<TK>> rangeSearch(TK beginKey, TK endKey) {
+		fstream file(this->filename, ios::binary | ios::in | ios::out);
+		vector<Record<TK>> records;
+		rangeSearch(records, pos_root, beginKey, endKey, file);
+		file.close();
+		return records;
+	}
 
 	bool insert(Record<TK> record) {
 		fstream file(this->filename, ios::binary | ios::in | ios::out);
@@ -162,6 +162,21 @@ private:
 			search(records, record.left, key, file);
 			search(records, record.right, key, file);
 		}
+	}
+
+	void rangeSearch(vector<Record<TK>>& records, long pos_node, TK beginKey, TK endKey, fstream &file){
+		if(pos_node == -1) return;
+
+		Record<TK> node = read_record(pos_node, file);
+
+		if(node.cod >= beginKey)
+			rangeSearch(records, node.left, beginKey, endKey, file);
+
+		if(node.cod >= beginKey && node.cod <= endKey)
+			records.push_back(node);
+
+		if(node.cod <= endKey)
+			rangeSearch(records, node.right, beginKey, endKey, file);
 	}
 
 	bool insert(long parent, long pos_node, Record<TK> record, fstream &file) {
@@ -521,19 +536,25 @@ void test(string filename) {
 	file.insert(r2);
 	file.insert(r3);
 	file.insert(r4);
-//	file.insert(r6);
-//	file.insert(r5);
-//	file.insert(r8);
-//	file.insert(r7);
-//	file.insert(r9);
+	file.insert(r6);
+	file.insert(r5);
+	file.insert(r8);
+	file.insert(r7);
+	file.insert(r9);
+	file.insert(r10);
+	file.insert(r11);
 
 // DELETE
-	file.remove(1002);
+//	file.remove(1002);
 
 	file.printAll();
 	cout << endl;
 	file.displayPretty();
 
+	auto records = file.rangeSearch(990, 1000);
+
+	for (auto &r : records)
+		r.showData();
 
 //	cout << "--------- find data -----------\n";
 //	vector<Record<int>> records = file.search(1000);
