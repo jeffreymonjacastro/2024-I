@@ -24,8 +24,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="GG BD2, F Compi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBP-TA/s3_error_handling_dto/asesoria-gabriel-main/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DBP-TA/s3_error_handling_dto/asesoria-gabriel-main/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,6 +185,7 @@
       <workItem from="1715215932811" duration="391000" />
       <workItem from="1715556423172" duration="7694000" />
       <workItem from="1715614385710" duration="11000" />
+      <workItem from="1715620547086" duration="126000" />
     </task>
     <task id="LOCAL-00001" summary="Things">
       <option name="closed" value="true" />
@@ -235,11 +234,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/DBII/S4/HashFile.h</url>
-          <line>87</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Compi/S4/lab42sol.cpp</url>
           <line>254</line>
