@@ -19,19 +19,19 @@ public:
 	int interpret(Program *);
 
 	// visit para 3 clases
-  	int visit(Program *p);
+  	int visit(Program *p) override;
 
-	int visit(AssignStatement *s);
+	int visit(AssignStatement *s) override;
 
-	int visit(PrintStatement *s);
+	int visit(PrintStatement *s) override;
 
-	int visit(BinaryExp *e);
+	int visit(BinaryExp *e) override;
 
-	int visit(NumberExp *e);
+	int visit(NumberExp *e) override;
 
-	int visit(IdExp *e);
+	int visit(IdExp *e) override;
 
-	int visit(ParenthExp *e);
+	int visit(ParenthExp *e) override;
 };
 
 
