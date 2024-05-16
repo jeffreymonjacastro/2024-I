@@ -82,11 +82,35 @@ build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/DBII/S7/avl.cpp.
 
 build cmake_object_order_depends_target_Compi: phony || CMakeFiles/Compi.dir
 
-build CMakeFiles/Compi.dir/Compi/S4/lab42sol.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S4/lab42sol.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S4\lab42sol.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/Ejercicio3-lab7/imp.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7\imp.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S4
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7
+
+build CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp_parser.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/Ejercicio3-lab7/imp_parser.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7\imp_parser.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Compi.dir
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7
+
+build CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp_printer.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/Ejercicio3-lab7/imp_printer.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7\imp_printer.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Compi.dir
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7
+
+build CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp_interpreter.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/Ejercicio3-lab7/imp_interpreter.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7\imp_interpreter.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Compi.dir
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7
+
+build CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp_ast_test.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/Ejercicio3-lab7/imp_ast_test.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7\imp_ast_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Compi.dir
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\Ejercicio3-lab7
 
 
 # =============================================================================
@@ -96,7 +120,7 @@ build CMakeFiles/Compi.dir/Compi/S4/lab42sol.cpp.obj: CXX_COMPILER__Compi_unscan
 #############################################
 # Link the executable Compi.exe
 
-build Compi.exe: CXX_EXECUTABLE_LINKER__Compi_Debug CMakeFiles/Compi.dir/Compi/S4/lab42sol.cpp.obj
+build Compi.exe: CXX_EXECUTABLE_LINKER__Compi_Debug CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp.cpp.obj CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp_parser.cpp.obj CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp_printer.cpp.obj CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp_interpreter.cpp.obj CMakeFiles/Compi.dir/Compi/S7/Ejercicio3-lab7/imp_ast_test.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Compi.dir

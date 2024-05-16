@@ -23,8 +23,57 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="GG BD2, F Compi">
+    <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="AVL finished">
+      <change afterPath="$PROJECT_DIR$/Compi/S6/ast.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/calc.l" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/calc.y" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/ejemplo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/grammar.y" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/parser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/run (1).sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/run.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S6/scanner.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio1-lab7/exp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio1-lab7/exp.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio1-lab7/exp_parser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio1-lab7/exp_parser.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio1-lab7/exp_test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/ast_evaluator.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/ast_evaluator.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/ast_printer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/ast_printer.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/ast_visitor.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/ast_visitor.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/exp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/exp.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/exp_parser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/exp_parser.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio2-lab7/exp_visitor_test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp_ast_test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp_ast_visitor.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp_interpreter.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp_interpreter.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp_parser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp_parser.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp_printer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S7/Ejercicio3-lab7/imp_printer.hh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-0d03a1ea08635847d5bc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-05-13T00-08-14-0375.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-ADA-Debug-596c279dff28a0e94711.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CPC-Debug-4d8f5dacffe70f23e37c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Compi-Debug-46734e9d30dd8516b34b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Compi.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Compi.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +86,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -90,7 +140,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jeffr/GitHub/BDII_P1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jeffr/GitHub/2024-I&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -113,7 +163,12 @@
       <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S5" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.DB">
+  <component name="RunManager" selected="CMake Application.Compi">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ADA" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="ADA" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="ADA">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -124,7 +179,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Compi" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;2^3^2&quot;" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="Compi" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="Compi">
+    <configuration name="Compi" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;x = 10; print(x**2)&quot;" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="Compi" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="Compi">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -186,6 +241,9 @@
       <workItem from="1715556423172" duration="7694000" />
       <workItem from="1715614385710" duration="11000" />
       <workItem from="1715620547086" duration="126000" />
+      <workItem from="1715633839758" duration="13844000" />
+      <workItem from="1715660119851" duration="271000" />
+      <workItem from="1715704022193" duration="3627000" />
     </task>
     <task id="LOCAL-00001" summary="Things">
       <option name="closed" value="true" />
@@ -203,7 +261,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714147349252</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cosas de BD2">
+      <option name="closed" value="true" />
+      <created>1715647947638</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715647947638</updated>
+    </task>
+    <task id="LOCAL-00004" summary="AVL finished">
+      <option name="closed" value="true" />
+      <created>1715660092700</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715660092700</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +303,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Things" />
     <MESSAGE value="GG BD2, F Compi" />
-    <option name="LAST_COMMIT_MESSAGE" value="GG BD2, F Compi" />
+    <MESSAGE value="Cosas de BD2" />
+    <MESSAGE value="AVL finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="AVL finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -238,6 +314,11 @@
           <url>file://$PROJECT_DIR$/Compi/S4/lab42sol.cpp</url>
           <line>254</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/DBII/S7/avl.cpp</url>
+          <line>553</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
