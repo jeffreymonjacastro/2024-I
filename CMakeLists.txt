@@ -3,7 +3,7 @@ project(2024_I)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(DB DBII/S7/avl.cpp)
+add_executable(DB DBII/S7/extendibleHashing.cpp)
 
 add_executable(Compi
         Compi/S7/lab6/imp.hh
