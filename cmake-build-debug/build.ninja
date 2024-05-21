@@ -41,39 +41,6 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/jeffr/GitHub/2024-I/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target DB
-
-
-#############################################
-# Order-only phony target for DB
-
-build cmake_object_order_depends_target_DB: phony || CMakeFiles/DB.dir
-
-build CMakeFiles/DB.dir/DBII/S7/extendibleHashing.cpp.obj: CXX_COMPILER__DB_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/DBII/S7/extendibleHashing.cpp || cmake_object_order_depends_target_DB
-  DEP_FILE = CMakeFiles\DB.dir\DBII\S7\extendibleHashing.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\DB.dir
-  OBJECT_FILE_DIR = CMakeFiles\DB.dir\DBII\S7
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target DB
-
-
-#############################################
-# Link the executable DB.exe
-
-build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/DBII/S7/extendibleHashing.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\DB.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = DB.exe
-  TARGET_IMPLIB = libDB.dll.a
-  TARGET_PDB = DB.exe.dbg
-
-# =============================================================================
 # Object build statements for EXECUTABLE target Compi
 
 
@@ -82,41 +49,41 @@ build DB.exe: CXX_EXECUTABLE_LINKER__DB_Debug CMakeFiles/DB.dir/DBII/S7/extendib
 
 build cmake_object_order_depends_target_Compi: phony || CMakeFiles/Compi.dir
 
-build CMakeFiles/Compi.dir/Compi/S7/lab6/imp.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/lab6/imp.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\lab6\imp.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S8/lab8.1/environment.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S8/lab8.1/environment.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S8\lab8.1\environment.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\lab6
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S8\lab8.1
 
-build CMakeFiles/Compi.dir/Compi/S7/lab6/imp_parser.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/lab6/imp_parser.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\lab6\imp_parser.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S8/lab8.1/imp.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S8\lab8.1\imp.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\lab6
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S8\lab8.1
 
-build CMakeFiles/Compi.dir/Compi/S7/lab6/imp_printer.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/lab6/imp_printer.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\lab6\imp_printer.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_interpreter.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S8/lab8.1/imp_interpreter.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S8\lab8.1\imp_interpreter.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\lab6
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S8\lab8.1
 
-build CMakeFiles/Compi.dir/Compi/S7/lab6/imp_interpreter.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/lab6/imp_interpreter.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\lab6\imp_interpreter.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_parser.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S8/lab8.1/imp_parser.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S8\lab8.1\imp_parser.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\lab6
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S8\lab8.1
 
-build CMakeFiles/Compi.dir/Compi/S7/lab6/environment.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/lab6/environment.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\lab6\environment.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_printer.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S8/lab8.1/imp_printer.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S8\lab8.1\imp_printer.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\lab6
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S8\lab8.1
 
-build CMakeFiles/Compi.dir/Compi/S7/lab6/imp_test.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S7/lab6/imp_test.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S7\lab6\imp_test.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_test.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S8/lab8.1/imp_test.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S8\lab8.1\imp_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S7\lab6
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S8\lab8.1
 
 
 # =============================================================================
@@ -126,7 +93,7 @@ build CMakeFiles/Compi.dir/Compi/S7/lab6/imp_test.cpp.obj: CXX_COMPILER__Compi_u
 #############################################
 # Link the executable Compi.exe
 
-build Compi.exe: CXX_EXECUTABLE_LINKER__Compi_Debug CMakeFiles/Compi.dir/Compi/S7/lab6/imp.cpp.obj CMakeFiles/Compi.dir/Compi/S7/lab6/imp_parser.cpp.obj CMakeFiles/Compi.dir/Compi/S7/lab6/imp_printer.cpp.obj CMakeFiles/Compi.dir/Compi/S7/lab6/imp_interpreter.cpp.obj CMakeFiles/Compi.dir/Compi/S7/lab6/environment.cpp.obj CMakeFiles/Compi.dir/Compi/S7/lab6/imp_test.cpp.obj
+build Compi.exe: CXX_EXECUTABLE_LINKER__Compi_Debug CMakeFiles/Compi.dir/Compi/S8/lab8.1/environment.cpp.obj CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp.cpp.obj CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_interpreter.cpp.obj CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_parser.cpp.obj CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_printer.cpp.obj CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_test.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Compi.dir
@@ -234,8 +201,6 @@ build CPC: phony CPC.exe
 
 build Compi: phony Compi.exe
 
-build DB: phony DB.exe
-
 # =============================================================================
 # Folder targets.
 
@@ -244,7 +209,7 @@ build DB: phony DB.exe
 #############################################
 # Folder: C:/Users/jeffr/GitHub/2024-I/cmake-build-debug
 
-build all: phony DB.exe Compi.exe CPC.exe ADA.exe
+build all: phony Compi.exe CPC.exe ADA.exe
 
 # =============================================================================
 # Built-in targets
