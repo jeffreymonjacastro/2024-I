@@ -11,10 +11,7 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="2024_I" targetName="CPC" />
-      <config projectName="2024_I" targetName="DB" />
-      <config projectName="2024_I" targetName="Compi" />
-      <config projectName="2024_I" targetName="ADA" />
+      <config projectName="lab8" targetName="prueba6" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -23,9 +20,86 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="Compi Lab 6">
+    <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="Compi S8">
+      <change afterPath="$PROJECT_DIR$/Compi/S8/Lab7/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/query/cache-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/reply/cache-v2-c5e287b684ed03c3aa11.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-f27488071ca1948f4e1f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-76fe8e76b430e1933290.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/reply/index-2024-05-23T16-04-51-0688.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/reply/target-lab8-Debug-360d5f6795ac6ddd73e6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-3937d180a49737ffe2b7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/lab8.dir/environment.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/lab8.dir/imp.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/lab8.dir/imp_interpreter.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/lab8.dir/imp_parser.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/lab8.dir/imp_printer.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/lab8.dir/imp_test.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/build.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/ejemplo1.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/cmake-build-debug/lab8.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/environment.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/environment.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/gramatica.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp_interpreter.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp_interpreter.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp_parser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp_parser.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp_printer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp_printer.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp_test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/TestLab7/imp_visitor.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/ejemplo1.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/ejemplo2.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/ejemplo3.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/ejemplo4.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/ejemplo5.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/environment.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/environment.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp_interpreter.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp_interpreter.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp_parser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp_parser.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp_printer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp_printer.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp_test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S8/prueba6/imp_visitor.hh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
+    <list id="a5f15934-bca1-43e1-a962-6d0fcee3a802" name="Changes by vilch" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +109,13 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
@@ -71,40 +152,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;CMake Application.2024_I.executor&quot;: &quot;Run&quot;,
-    &quot;CMake Application.ADA.executor&quot;: &quot;Run&quot;,
-    &quot;CMake Application.CPC.executor&quot;: &quot;Run&quot;,
-    &quot;CMake Application.Compi.executor&quot;: &quot;Run&quot;,
-    &quot;CMake Application.DB.executor&quot;: &quot;Run&quot;,
-    &quot;CMake Application.DB2.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jeffr/GitHub/BDII_P1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
-    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "CMake Application.2024_I.executor": "Run",
+    "CMake Application.ADA.executor": "Run",
+    "CMake Application.CPC.executor": "Run",
+    "CMake Application.Compi.executor": "Run",
+    "CMake Application.DB.executor": "Run",
+    "CMake Application.DB2.executor": "Run",
+    "CMake Application.lab8.executor": "Run",
+    "CMake Application.prueba6.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jeffr/GitHub/2024-I/Compi/S8/prueba6/cmake-build-debug",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
+    "structure.view.defaults.are.configured": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jeffr\GitHub\2024-I\DBII\S3\lab2.1" />
+      <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S8\prueba6\cmake-build-debug" />
+      <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S8\prueba6" />
+      <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S8\Lab7" />
+      <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S8\Lab7\cmake-build-debug" />
+      <recent name="C:\Users\jeffr\GitHub\2024-I\cmake-build-debug" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S7\lab6" />
@@ -114,32 +201,31 @@
       <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S5\exp" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.DB">
-    <configuration name="ADA" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="ADA" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="ADA">
+  <component name="RunManager" selected="CMake Application.prueba6">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compi" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="ejemplo2.imp" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab8" TARGET_NAME="Compi" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab8" RUN_TARGET_NAME="Compi">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CPC" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="CPC" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="CPC">
+    <configuration name="lab8" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;ejemplo1.imp&quot;" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab8" TARGET_NAME="lab8" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab8" RUN_TARGET_NAME="lab8">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Compi" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;x='hola'; z='mundo'; print(x+z)&quot;" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="Compi" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="Compi">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DB" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="DB" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="DB">
+    <configuration name="prueba6" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;ejemplo5.imp&quot;" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab8" TARGET_NAME="prueba6" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab8" RUN_TARGET_NAME="prueba6">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.ADA" />
-      <item itemvalue="CMake Application.CPC" />
       <item itemvalue="CMake Application.Compi" />
-      <item itemvalue="CMake Application.DB" />
+      <item itemvalue="CMake Application.lab8" />
+      <item itemvalue="CMake Application.prueba6" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -193,6 +279,9 @@
       <workItem from="1715875668656" duration="811000" />
       <workItem from="1715876583432" duration="19339000" />
       <workItem from="1715984209241" duration="74000" />
+      <workItem from="1716308309308" duration="5564000" />
+      <workItem from="1716447480609" duration="1662000" />
+      <workItem from="1716479975608" duration="6511000" />
     </task>
     <task id="LOCAL-00001" summary="Things">
       <option name="closed" value="true" />
@@ -234,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715888129963</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Compi S8">
+      <option name="closed" value="true" />
+      <created>1716315043215</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716315043215</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +360,8 @@
     <MESSAGE value="Cosas de BD2" />
     <MESSAGE value="AVL finished" />
     <MESSAGE value="Compi Lab 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Compi Lab 6" />
+    <MESSAGE value="Compi S8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compi S8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -272,11 +370,6 @@
           <url>file://$PROJECT_DIR$/Compi/S4/lab42sol.cpp</url>
           <line>254</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/DBII/S7/avl.cpp</url>
-          <line>553</line>
-          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

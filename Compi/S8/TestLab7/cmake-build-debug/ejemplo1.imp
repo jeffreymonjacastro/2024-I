@@ -1,0 +1,4 @@
+x = 10;
+for(i = 0; i < x; i = 1+i) then
+print(i);
+endl;

@@ -1,0 +1,17 @@
+# ninja log v5
+7	1222	7381894107231333	CMakeFiles/prueba6.dir/environment.cpp.obj	75a15fabf59685a
+14	1307	7381894108044693	CMakeFiles/prueba6.dir/imp.cpp.obj	692f393fd75bdc2a
+27	1335	7381894108353526	CMakeFiles/prueba6.dir/imp_interpreter.cpp.obj	a10f22b17986ecce
+43	1761	7381894112599370	CMakeFiles/prueba6.dir/imp_parser.cpp.obj	2d8fa511401a27e6
+1225	2057	7381894115577703	CMakeFiles/prueba6.dir/imp_printer.cpp.obj	1f8c31e74d5f68f5
+1308	2449	7381894119492270	CMakeFiles/prueba6.dir/imp_test.cpp.obj	8a6740fda9eddc92
+2450	2754	7381894122445041	prueba6.exe	943e0a5f686908ae
+15	2187	7381895357797954	CMakeFiles/prueba6.dir/imp_parser.cpp.obj	2d8fa511401a27e6
+2193	2569	7381895361543725	prueba6.exe	943e0a5f686908ae
+16	1594	7381896675460393	CMakeFiles/prueba6.dir/imp_parser.cpp.obj	2d8fa511401a27e6
+1595	1902	7381896678507665	prueba6.exe	943e0a5f686908ae
+8	576	7381902034272464	CMakeFiles/prueba6.dir/imp_printer.cpp.obj	1f8c31e74d5f68f5
+35	692	7381902035422428	CMakeFiles/prueba6.dir/imp_test.cpp.obj	8a6740fda9eddc92
+692	2827	7381902052464854	prueba6.exe	943e0a5f686908ae
+6	393	7381902175121319	CMakeFiles/prueba6.dir/imp_printer.cpp.obj	1f8c31e74d5f68f5
+394	528	7381902176418406	prueba6.exe	943e0a5f686908ae

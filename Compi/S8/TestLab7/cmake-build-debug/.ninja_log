@@ -1,0 +1,8 @@
+# ninja log v5
+11	1109	7381836208678504	CMakeFiles/lab8.dir/imp.cpp.obj	5db70efa48eca5d4
+16	1191	7381836209558950	CMakeFiles/lab8.dir/imp_interpreter.cpp.obj	fa67a620aa98b976
+2	1228	7381836209886040	CMakeFiles/lab8.dir/environment.cpp.obj	2c33be6486a22799
+25	1529	7381836212936994	CMakeFiles/lab8.dir/imp_parser.cpp.obj	e6a139f45ba937b5
+1113	1752	7381836215186044	CMakeFiles/lab8.dir/imp_printer.cpp.obj	2148f7cbdd3a32d1
+1191	2031	7381836217966509	CMakeFiles/lab8.dir/imp_test.cpp.obj	73b17a3c06a2bd7f
+2031	2294	7381836220495106	lab8.exe	67c9578872d387b3

@@ -1,0 +1,3 @@
+C:/Users/jeffr/GitHub/2024-I/Compi/S8/Lab7/cmake-build-debug/CMakeFiles/lab8.dir
+C:/Users/jeffr/GitHub/2024-I/Compi/S8/Lab7/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/jeffr/GitHub/2024-I/Compi/S8/Lab7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
