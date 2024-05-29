@@ -18,7 +18,7 @@ public:
 
 	void visit(IfStatement *);
 
-	void visit(WhileStatement *s);
+	void visit(WhileStatement *);
 
 	int visit(BinaryExp *e);
 

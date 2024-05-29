@@ -48,7 +48,6 @@ void ImpPrinter::visit(IfStatement *s) {
 	return;
 }
 
-
 void ImpPrinter::visit(WhileStatement *s){
 	cout << "while (";
 	s->cond->accept(this);
