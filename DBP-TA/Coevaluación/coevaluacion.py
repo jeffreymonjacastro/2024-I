@@ -1,24 +1,48 @@
 import numpy as np
 
-# Datos de ejemplo: autoevaluaciones y coevaluaciones
-autoevaluaciones = np.array([20, 20, 20, 20])  # Autoevaluaciones de los estudiantes
-coevaluaciones = np.array([
-    [19, 16, 15],  # Evaluaciones recibidas por el primer estudiante de los otros tres
-    [5, 5, 5],  # Evaluaciones recibidas por el segundo estudiante
-    [16, 18, 12],  # Evaluaciones recibidas por el tercer estudiante
-    [20, 19, 18]   # Evaluaciones recibidas por el cuarto estudiante
+nota_final = 15
+n = 4
+
+# |    | E1 | E2 | E3 |
+# |----|----|----|----|
+# | E1 | 18 | 19 | 16 | -> Calificaciones que puso el E1 a sí mismo y a los demás
+# | E2 | 14 | 15 | 16 | -> Calificaciones que puso el E2 a sí mismo y a los demás
+# | E3 | 16 | 18 | 17 | -> Calificaciones que puso el E3 a sí mismo y a los demás
+
+## Autoevaluaciones: notas[i][i]
+## Coevaluaciones: notas[i][j], i != j
+
+notas = np.array([
+    [100, 85, 70, 100],  # Evaluaciones del estudiante 1 (auto, coevaluaciones de 2 y 3)
+    [40, 100, 60, 100],  # Evaluaciones del estudiante 2
+    [55, 90, 100, 100],  # Evaluaciones del estudiante 3
+    [50, 80, 80, 100],  # Evaluaciones del estudiante 4
 ])
 
-# Calcular el promedio de las coevaluaciones para cada estudiante
-promedios = np.mean(coevaluaciones, axis=1)
 
-# Calcular las diferencias entre las autoevaluaciones y los promedios
-diferencias = autoevaluaciones - promedios
+# Autoevaluación - promedio de coevaluación
+# promedios = [P1, P2, P3]
+# Si el promedio de un estudiante es negativo, autoevaluación < prom(coevaluación) [SE PREMIA, porque se calificó bajo y recibió mejores calificaciones de los demás]
+# Si el promedio de un estudiante es positivo, autoevaluación > prom(coevaluación) [SE CASTIGA, porque se calificó alto y recibió peores calificaciones de los demás]
 
-# Determinar los factores multiplicativos base
-# Si la autoevaluación está por encima del promedio, se penaliza (< 1)
-# Si la autoevaluación está por debajo del promedio, se premia (> 1)
-factores = 1 - 0.1 * diferencias / np.std(coevaluaciones, axis=1, ddof=1)
+promedios = []
+
+for i in range(n):
+    prom = 0
+    auto = notas[i][i]
+    for j in range(n):
+        if i != j:
+            prom += notas[j][i]
+    prom = prom / (n - 1)
+    promedios.append(auto - prom)
+
+promedios = np.array(promedios)
+
+# Calcular desviación estándar
+std_dev = np.std(notas, axis=1, ddof=1) 
+
+# Calcular factores multiplicativos
+factores = 1 - 0.1 * promedios / std_dev
 
 # Ajustar los factores para que el promedio sea 1
 factores = factores / np.mean(factores)
@@ -26,8 +50,7 @@ factores = factores / np.mean(factores)
 # Limitar el factor multiplicativo entre 0.8 y 1.2
 factores = np.clip(factores, 0.8, 1.2)
 
-print("Autoevaluaciones:", autoevaluaciones)
-print("Promedio de coevaluaciones:", promedios)
-print("Diferencias:", diferencias)
+notas_finales = np.ceil(nota_final * factores)
+
 print("Factores multiplicativos:", factores)
-print("Promedio de los factores:", np.mean(factores))
+print("Notas finales:", notas_finales)
