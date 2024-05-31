@@ -1,30 +1,22 @@
-#ifndef IMP_INTERPRETER
-#define IMP_INTERPRETER
-
-#include <unordered_map>
+#ifndef IMP_PRINTER
+#define IMP_PRINTER
 
 #include "imp.hh"
 #include "imp_visitor.hh"
-#include "environment.hh"
 
-using namespace std;
-
-class ImpInterpreter : public ImpVisitor {
-private:
-  Environment<int> env;
+class ImpPrinter : public ImpVisitor {
 public:
-  void interpret(Program*);
+  void print(Program*);
   void visit(Program*);
-
-  int visit(Body*);
-  int visit(VarDecList*);
-  int visit(VarDec*);
-
+  void visit(Body*);
+  void visit(VarDecList*);
+  void visit(VarDec*); 
   void visit(StatementList*);
   void visit(AssignStatement*);
   void visit(PrintStatement*);
   void visit(IfStatement*);
   void visit(WhileStatement*);
+
   
   int visit(BinaryExp* e);
   int visit(NumberExp* e);

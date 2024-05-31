@@ -1,5 +1,5 @@
 # ninja log v5
-3	257	7386165954034442	build.ninja	464fb2023304f7cb
+3	257	7387891570534694	build.ninja	464fb2023304f7cb
 1245	2183	7374093079074440	CMakeFiles/Compi.dir/Compi/S7/Ejercicio2-lab7/ast_printer.cpp.obj	45265369edf930c5
 863	1172	7345709364134683	2024_I.exe	7a71d34b6cb6cd17
 792	964	7353266617765508	DB2.exe	37260442096fa4a0
@@ -14,8 +14,9 @@
 9	2755	7361511360766808	CMakeFiles/CPC.dir/CPC/exercises/ac/S4/A.cpp.obj	bfe65f966e2de117
 7	1145	7361988206854720	CMakeFiles/Compi.dir/Compi/S5/exp/exp_test.cpp.obj	51b85f4b9d0c9dd0
 11	821	7361995655804596	CMakeFiles/Compi.dir/Compi/S5/exp_test.cpp.obj	5addd52816e692c8
+16	919	7387533418005359	CMakeFiles/Compi.dir/Compi/S9/lab9.1/imp_interpreter.cpp.obj	d4de6a4d257db909
 21	848	7361990995312406	CMakeFiles/Compi.dir/Compi/S5/exp.cpp.obj	938c07239248114b
-1520	1979	7386165339704148	Compi.exe	7fb5c4dcb8acfc57
+1727	2312	7387887247584483	Compi.exe	306d681de8c164a8
 13	1882	7372620450049568	CMakeFiles/DB.dir/DBII/S3/lab2.1/p1-terminado.cpp.obj	a136c750e63e8114
 12	3384	7375847937596749	CMakeFiles/Compi.dir/Compi/S7/lab6/imp_parser.cpp.obj	3c7433dcf0f14f4c
 12	627	7362010326053341	CMakeFiles/Compi.dir/Compi/S5/imp/imp_test.cpp.obj	e822a4e2a43c2d0d
@@ -27,7 +28,7 @@
 16	4647	7375847950777312	CMakeFiles/Compi.dir/Compi/S7/lab6/imp_printer.cpp.obj	9f13daab05e64f83
 7	1298	7363750708857100	CMakeFiles/Compi.dir/Compi/S5/lab5/prueba4_parser.cpp.obj	fdd6353dd7b5962d
 9	1471	7363791118195231	CMakeFiles/Compi.dir/Compi/S5/lab5/prueba4.cpp.obj	9f007d955a7d1271
-4	1519	7386165335124948	CMakeFiles/Compi.dir/Compi/S9/lab9.1/env_test.cpp.obj	6580aa1fc9c4ac39
+9	1293	7386167058973167	CMakeFiles/Compi.dir/Compi/S9/lab9.1/env_test.cpp.obj	6580aa1fc9c4ac39
 14	1308	7363927375773335	CMakeFiles/ADA.dir/ADA/MinimumElement.cpp.obj	38f1e262663fd1ae
 11	970	7369193217477568	CMakeFiles/ADA.dir/ADA/firstMissingNumber.cpp.obj	e051c77ade5a71f3
 4	691	7366789846324593	CMakeFiles/Compi.dir/Compi/S4/lab42.cpp.obj	88706b5e1dde4e5d
@@ -52,9 +53,7 @@
 10	648	7380150888732250	CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_interpreter.cpp.obj	299f97aacdf9ae61
 13	842	7380150890642236	CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_parser.cpp.obj	8b95fde124c471ac
 536	1132	7380150893562438	CMakeFiles/Compi.dir/Compi/S8/lab8.1/imp_test.cpp.obj	3e4cc60a3ae77899
-10	1360	7386166465521200	CMakeFiles/Compi.dir/Compi/S9/lab9.1/env_test.cpp.obj	6580aa1fc9c4ac39
-1361	1556	7386166467458073	Compi.exe	7fb5c4dcb8acfc57
-9	1275	7386166835014482	CMakeFiles/Compi.dir/Compi/S9/lab9.1/env_test.cpp.obj	6580aa1fc9c4ac39
-1276	1460	7386166836836085	Compi.exe	7fb5c4dcb8acfc57
-9	1293	7386167058973167	CMakeFiles/Compi.dir/Compi/S9/lab9.1/env_test.cpp.obj	6580aa1fc9c4ac39
-1294	1482	7386167060812612	Compi.exe	7fb5c4dcb8acfc57
+9	716	7387554615851313	CMakeFiles/Compi.dir/Compi/S9/lab9.1/imp_test.cpp.obj	3d709f57831bdb20
+11	596	7387533414775131	CMakeFiles/Compi.dir/Compi/S9/lab9.1/imp_printer.cpp.obj	991afe5eee62d273
+6	701	7387533415858481	CMakeFiles/Compi.dir/Compi/S9/lab9.1/imp.cpp.obj	2371c6c533dfe2b0
+11	1726	7387887241745547	CMakeFiles/Compi.dir/Compi/S9/lab9.1/imp_parser.cpp.obj	e7f32a76d62262e3

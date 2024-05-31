@@ -7,55 +7,55 @@
 #include "imp_printer.hh"
 #include "imp_interpreter.hh"
 
-int main(int argc, const char* argv[]) {
 
-  bool useparser = true;
-  Program *program; 
+int main(int argc, const char *argv[]) {
+	bool useparser = true;
+	Program *program;
 
-  if (useparser) {
-  
-    if (argc != 2) {
-      cout << "Incorrect number of arguments" << endl;
-      exit(1);
-    }
+	if (useparser) {
 
-    std::ifstream t(argv[1]);
-    std::stringstream buffer;
-    buffer << t.rdbuf();
-    Scanner scanner(buffer.str());
+		if (argc != 2) {
+			cout << "Incorrect number of arguments" << endl;
+			exit(1);
+		}
 
-    // Token *tk = scanner.nextToken();
-		// while (tk->type != Token::END) {
-		// 	cout << Token::token_names[tk->type] << " " << tk->lexema << endl;
-		// 	delete tk;
-		// 	tk = scanner.nextToken();
-		// }
-		// cout << "last token " << tk << endl;
-		// delete tk;
-    
-    //Scanner scanner(argv[1]);
-    Parser parser(&scanner);
-    program = parser.parse();  // el parser construye la aexp
-    
-  } else {
-    
-    // Exp* e = new BinaryExp( new NumberExp(2), new NumberExp(3), EXP);
-    // Stm* s1 = new AssignStatement("x",e);
-    // Stm* s2 = new PrintStatement(new IdExp("x") );
-    // StatementList* sl = new StatementList();
-    // sl->add(s1);
-    // sl->add(s2);
-    // program = new Program(sl);
-  }
+		std::ifstream t(argv[1]);
+		std::stringstream buffer;
+		buffer << t.rdbuf();
+		Scanner scanner(buffer.str());
 
-  ImpPrinter printer;
-  // ImpInterpreter interpreter;
-  
-  printer.print(program);
-  cout << "Run program:" << endl;
-  // interpreter.interpret(program);
+//		 Token *tk = scanner.nextToken();
+//		 while (tk->type != Token::END) {
+//		 	cout << Token::token_names[tk->type] << " " << tk->lexema << endl;
+//		 	delete tk;
+//		 	tk = scanner.nextToken();
+//		 }
+//		 cout << "last token " << tk << endl;
+//		 delete tk;
 
-  delete program;
+		//Scanner scanner(argv[1]);
+		Parser parser(&scanner);
+		program = parser.parse();  // el parser construye la aexp
+
+	} else {
+
+		// Exp* e = new BinaryExp( new NumberExp(2), new NumberExp(3), EXP);
+		// Stm* s1 = new AssignStatement("x",e);
+		// Stm* s2 = new PrintStatement(new IdExp("x") );
+		// StatementList* sl = new StatementList();
+		// sl->add(s1);
+		// sl->add(s2);
+		// program = new Program(sl);
+	}
+
+	ImpPrinter printer;
+	ImpInterpreter interpreter;
+
+	printer.print(program);
+	cout << "Run program:" << endl;
+	interpreter.interpret(program);
+
+	delete program;
 
 
 }

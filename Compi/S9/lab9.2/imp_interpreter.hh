@@ -15,11 +15,9 @@ private:
 public:
   void interpret(Program*);
   void visit(Program*);
-
-  int visit(Body*);
-  int visit(VarDecList*);
-  int visit(VarDec*);
-
+  void visit(Body*);
+  void visit(VarDecList*);
+  void visit(VarDec*);  
   void visit(StatementList*);
   void visit(AssignStatement*);
   void visit(PrintStatement*);
