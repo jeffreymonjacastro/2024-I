@@ -3,7 +3,8 @@
     "ostream": "cpp",
     "iosfwd": "cpp",
     "iostream": "cpp",
-    "cstdio": "cpp"
+    "cstdio": "cpp",
+    "utility": "cpp"
   },
   "r.lsp.promptToInstall": false,
   "java.compile.nullAnalysis.mode": "automatic"

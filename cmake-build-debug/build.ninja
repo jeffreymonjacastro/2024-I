@@ -49,41 +49,23 @@ cmake_ninja_workdir = C$:/Users/jeffr/GitHub/2024-I/cmake-build-debug/
 
 build cmake_object_order_depends_target_Compi: phony || CMakeFiles/Compi.dir
 
-build CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S9/lab9.2/imp.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S9\lab9.2\imp.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S10/lab10.1/svm.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S10\lab10.1\svm.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S9\lab9.2
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S10\lab10.1
 
-build CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_parser.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S9/lab9.2/imp_parser.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S9\lab9.2\imp_parser.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm_parser.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S10/lab10.1/svm_parser.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S10\lab10.1\svm_parser.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S9\lab9.2
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S10\lab10.1
 
-build CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_printer.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S9/lab9.2/imp_printer.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S9\lab9.2\imp_printer.cpp.obj.d
+build CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm_run.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S10/lab10.1/svm_run.cpp || cmake_object_order_depends_target_Compi
+  DEP_FILE = CMakeFiles\Compi.dir\Compi\S10\lab10.1\svm_run.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S9\lab9.2
-
-build CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_interpreter.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S9/lab9.2/imp_interpreter.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S9\lab9.2\imp_interpreter.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S9\lab9.2
-
-build CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_value.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S9/lab9.2/imp_value.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S9\lab9.2\imp_value.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S9\lab9.2
-
-build CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_test.cpp.obj: CXX_COMPILER__Compi_unscanned_Debug C$:/Users/jeffr/GitHub/2024-I/Compi/S9/lab9.2/imp_test.cpp || cmake_object_order_depends_target_Compi
-  DEP_FILE = CMakeFiles\Compi.dir\Compi\S9\lab9.2\imp_test.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Compi.dir
-  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S9\lab9.2
+  OBJECT_FILE_DIR = CMakeFiles\Compi.dir\Compi\S10\lab10.1
 
 
 # =============================================================================
@@ -93,7 +75,7 @@ build CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_test.cpp.obj: CXX_COMPILER__Compi
 #############################################
 # Link the executable Compi.exe
 
-build Compi.exe: CXX_EXECUTABLE_LINKER__Compi_Debug CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp.cpp.obj CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_parser.cpp.obj CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_printer.cpp.obj CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_interpreter.cpp.obj CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_value.cpp.obj CMakeFiles/Compi.dir/Compi/S9/lab9.2/imp_test.cpp.obj
+build Compi.exe: CXX_EXECUTABLE_LINKER__Compi_Debug CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm.cpp.obj CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm_parser.cpp.obj CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm_run.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Compi.dir

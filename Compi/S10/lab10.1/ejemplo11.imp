@@ -1,0 +1,9 @@
+var int i;
+var bool x;
+i = 4;
+while 0 < i do
+    x = (i == 4) or (i == 2);
+    if x then print(i) endif;
+    i = i - 1
+endwhile
+

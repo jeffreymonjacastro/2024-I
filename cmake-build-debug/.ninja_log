@@ -1,5 +1,5 @@
 # ninja log v5
-3	257	7387891570534694	build.ninja	464fb2023304f7cb
+3	257	7393397812549774	build.ninja	464fb2023304f7cb
 1245	2183	7374093079074440	CMakeFiles/Compi.dir/Compi/S7/Ejercicio2-lab7/ast_printer.cpp.obj	45265369edf930c5
 863	1172	7345709364134683	2024_I.exe	7a71d34b6cb6cd17
 792	964	7353266617765508	DB2.exe	37260442096fa4a0
@@ -57,3 +57,9 @@
 11	596	7387533414775131	CMakeFiles/Compi.dir/Compi/S9/lab9.1/imp_printer.cpp.obj	991afe5eee62d273
 6	701	7387533415858481	CMakeFiles/Compi.dir/Compi/S9/lab9.1/imp.cpp.obj	2371c6c533dfe2b0
 11	1726	7387887241745547	CMakeFiles/Compi.dir/Compi/S9/lab9.1/imp_parser.cpp.obj	e7f32a76d62262e3
+17	1247	7393397950031580	CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm_run.cpp.obj	4dfb1a844d5fcbc9
+3	1318	7393397950766445	CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm.cpp.obj	14c2a0184cf61c9d
+10	1373	7393397951313230	CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm_parser.cpp.obj	9c850d19fc4874fc
+1373	1852	7393397956045653	Compi.exe	1607feae669aa554
+10	1292	7393398568508893	CMakeFiles/Compi.dir/Compi/S10/lab10.1/svm_run.cpp.obj	4dfb1a844d5fcbc9
+1293	1520	7393398570714392	Compi.exe	1607feae669aa554

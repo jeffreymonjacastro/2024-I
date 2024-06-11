@@ -6,19 +6,28 @@ set(CMAKE_CXX_STANDARD 17)
 #add_executable(DB DBII/S7/extendibleHashing.cpp)
 
 add_executable(Compi
-        Compi/S9/lab9.2/environment.hh
-        Compi/S9/lab9.2/imp.hh
-        Compi/S9/lab9.2/imp.cpp
-        Compi/S9/lab9.2/imp_parser.hh
-        Compi/S9/lab9.2/imp_parser.cpp
-        Compi/S9/lab9.2/imp_visitor.hh
-        Compi/S9/lab9.2/imp_printer.hh
-        Compi/S9/lab9.2/imp_printer.cpp
-        Compi/S9/lab9.2/imp_interpreter.hh
-        Compi/S9/lab9.2/imp_interpreter.cpp
-        Compi/S9/lab9.2/imp_value.hh
-        Compi/S9/lab9.2/imp_value.cpp
-        Compi/S9/lab9.2/imp_test.cpp
+#        Compi/S10/lab10.1/environment.hh
+#        Compi/S10/lab10.1/imp.hh
+#        Compi/S10/lab10.1/imp.cpp
+#        Compi/S10/lab10.1/imp_parser.hh
+#        Compi/S10/lab10.1/imp_parser.cpp
+#        Compi/S10/lab10.1/imp_visitor.hh
+#        Compi/S10/lab10.1/imp_printer.hh
+#        Compi/S10/lab10.1/imp_printer.cpp
+#        Compi/S10/lab10.1/imp_interpreter.hh
+#        Compi/S10/lab10.1/imp_interpreter.cpp
+#        Compi/S10/lab10.1/imp_value.hh
+#        Compi/S10/lab10.1/imp_value.cpp
+#        Compi/S10/lab10.1/type_visitor.hh
+#        Compi/S10/lab10.1/imp_typechecker.hh
+#        Compi/S10/lab10.1/imp_typechecker.cpp
+#        Compi/S10/lab10.1/imp_test.cpp
+        Compi/S10/lab10.1/svm.hh
+        Compi/S10/lab10.1/svm.cpp
+        Compi/S10/lab10.1/svm_parser.hh
+        Compi/S10/lab10.1/svm_parser.cpp
+        Compi/S10/lab10.1/svm_run.cpp
+
 )
 
 add_executable(CPC CPC/exercises/ac/S4/A.cpp)

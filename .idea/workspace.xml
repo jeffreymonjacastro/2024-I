@@ -23,25 +23,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="Compi S8">
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/ejemplo11.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/ejemplo22.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/ejemplo22.imp.sm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/ejemplo222.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/ejemplo33.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/ejemplo44.imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/env_test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/environment.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_interpreter.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_interpreter.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_parser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_parser.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_printer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_printer.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_typechecker.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_typechecker.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_value.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_value.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_value_visitor.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/imp_visitor.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/svm.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/svm.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/svm_parser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/svm_parser.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/svm_run.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/svmejemplo0.svm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/svmejemplo1.svm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/svmejemplo2.svm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/svmejemplo_examen.svm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S10/lab10.1/type_visitor.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/assets/adaptive-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/assets/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/assets/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/assets/splash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/src/CoursesScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/src/LoginScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/src/RegisterScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/src/SensorScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/src/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBP-TA/s10_native/react-native-lab-main/src/notificationHelper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/ejemplo2.imp" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/ejemplo2.imp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/ejemplo44.imp" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/ejemplo44.imp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/environment.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/environment.hh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/imp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/imp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/imp.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/imp.hh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_interpreter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_interpreter.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_interpreter.hh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_parser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_parser.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_parser.hh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_printer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_printer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_test.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_visitor.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S9/lab9.1/imp_visitor.hh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-de7d02a6dfc5f7dc7a21.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-05-28T16-23-15-0466.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-ADA-Debug-92afb3b000646ef37a24.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CPC-Debug-4d1c65046675a90b2846.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Compi-Debug-3620c1c31b548711976d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-0106b322b843575c0896.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-05-30T16-19-17-0129.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-ADA-Debug-3ef87706edd65ddc5776.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CPC-Debug-9bbabf3651e7aacff21e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Compi-Debug-6a0a3baab38660db277c.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
@@ -113,6 +154,7 @@
     &quot;CMake Application.DB2.executor&quot;: &quot;Run&quot;,
     &quot;CMake Application.lab8.executor&quot;: &quot;Run&quot;,
     &quot;CMake Application.prueba6.executor&quot;: &quot;Debug&quot;,
+    &quot;Makefile Target.imp.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDatabaseViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -167,12 +209,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Compi" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="ejemplo1.imp" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="Compi" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="Compi">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Compi" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="svmejemplo0.svm" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="Compi" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="Compi">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -187,13 +224,25 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="imp" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Compi/S10/lab10.1/Makefile" target="imp" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="CMake Application.ADA" />
       <item itemvalue="CMake Application.CPC" />
       <item itemvalue="CMake Application.Compi" />
       <item itemvalue="CMake Application.lab8" />
       <item itemvalue="CMake Application.prueba6" />
+      <item itemvalue="Makefile Target.imp" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile Target.imp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -254,6 +303,9 @@
       <workItem from="1717026114643" duration="15000" />
       <workItem from="1717047810817" duration="5505000" />
       <workItem from="1717085281300" duration="2230000" />
+      <workItem from="1717519330273" duration="2532000" />
+      <workItem from="1717627500583" duration="6180000" />
+      <workItem from="1717689662754" duration="4210000" />
     </task>
     <task id="LOCAL-00001" summary="Things">
       <option name="closed" value="true" />
