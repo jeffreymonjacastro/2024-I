@@ -1,0 +1,14 @@
+.flex {
+  
+  
+}
+
+.ride {
+  background-color: #eee;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.ride p {
+  padding: 7px;
+}
