@@ -4,7 +4,8 @@
     "iosfwd": "cpp",
     "iostream": "cpp",
     "cstdio": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "xstring": "cpp"
   },
   "r.lsp.promptToInstall": false,
   "java.compile.nullAnalysis.mode": "automatic"

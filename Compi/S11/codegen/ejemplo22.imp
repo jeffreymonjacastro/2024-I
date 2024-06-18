@@ -1,5 +1,12 @@
-var int x, y;
+var int x, y, z;
+var bool b;
+z = 4;
 x = 3;
-if 5 < x then y = x**2 else y = x**3 endif;
+b = x < 5;
+if b then 
+  y = x*2 
+else 
+  y = x*3 
+endif;
 print(y)
 

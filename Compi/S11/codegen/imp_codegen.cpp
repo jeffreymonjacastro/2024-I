@@ -62,8 +62,8 @@ int ImpCodeGen::visit(VarDecList* s) {
   }  
   return 0;
 }
-			  
-int ImpCodeGen::visit(VarDec* vd) {
+
+int ImpCodeGen::visit(VarDec* vd) { 
   list<string>::iterator it;
   for (it = vd->vars.begin(); it != vd->vars.end(); ++it){
     direcciones.add_var(*it, siguiente_direccion++);
@@ -87,7 +87,7 @@ int ImpCodeGen::visit(AssignStatement* s) {
 
 int ImpCodeGen::visit(PrintStatement* s) {
   s->e->accept(this);
-  code << "print" << endl;;
+  code << "print" << endl;
   return 0;
 }
 

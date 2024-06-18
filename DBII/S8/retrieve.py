@@ -2,6 +2,7 @@ def retrieve(Query, Collection, k):
   #busqueda secuencial
   result = []
 
+
   for doc in Collection:
     # [0,1], [0, +INF]
     # 1: similitud máxima
