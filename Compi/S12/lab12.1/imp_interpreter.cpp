@@ -9,12 +9,24 @@ void ImpInterpreter::interpret(Program* p) {
 // modificar
 void ImpInterpreter::visit(Program* p) {
   env.add_level();
-  
+  fdecs.add_level();
   p->var_decs->accept(this);
   p->fun_decs->accept(this);
   // extraer main y ejecutar
+  if (fdecs.check("main")) {
+    FunDec* main_dec = fdecs.lookup("main");
+    retcall = false;
+    main_dec->body->accept(this);
+    if (!retcall) {
+      cout << "Error: Funcion main no ejecuto RETURN" << endl;
+      exit(0);
+    }
+  } else {
+    cout << "No se encontro funcion main" << endl;
+    exit(0);
+  }
 
-  
+  fdecs.remove_level();
   env.remove_level();
   return;
 }
@@ -36,8 +48,12 @@ void ImpInterpreter::visit(VarDecList* decs) {
 }
 
 void ImpInterpreter::visit(FunDecList* s) {
-  // completar
-} 
+  list<FunDec*>::iterator it;
+  for (it = s->fdlist.begin(); it != s->fdlist.end(); ++it) {
+    (*it)->accept(this);
+  }
+  return;
+}
 
 void ImpInterpreter::visit(VarDec* vd) {
   list<string>::iterator it;
@@ -55,7 +71,7 @@ void ImpInterpreter::visit(VarDec* vd) {
 }
 
 void ImpInterpreter::visit(FunDec* fd) {
-  // completar
+  fdecs.add_var(fd->fname, fd);
   return;
 }
 
@@ -64,6 +80,7 @@ void ImpInterpreter::visit(StatementList* s) {
   for (it = s->slist.begin(); it != s->slist.end(); ++it) {
     (*it)->accept(this);
     // agregar control de flujo por return
+    if (retcall) break; // salir
   }
   return;
 }
@@ -119,7 +136,9 @@ void ImpInterpreter::visit(WhileStatement* s) {
 }
 
 void ImpInterpreter::visit(ReturnStatement* s) {
-
+  if (s->e != NULL) 
+    retval = s->e->accept(this);
+  retcall = true;
   return;
 }
 
@@ -198,7 +217,20 @@ ImpValue ImpInterpreter::visit(CondExp* e) {
 }
 
 ImpValue ImpInterpreter::visit(FCallExp* e) {
-  ImpValue v;
-
-  return v;
+  FunDec* fdec = fdecs.lookup(e->fname);
+  env.add_level();
+  list<Exp*>::iterator it;
+  list<string>::iterator varit;
+  for (it = e->args.begin(), varit = fdec->vars.begin(); it != e->args.end(); ++it, ++varit) {
+    env.add_var(*varit, (*it)->accept(this));
+  }
+  retcall = false;
+  fdec->body->accept(this);
+  if (!retcall) {
+    cout << "Error: Funcion " << e->fname << " no ejecuto RETURN" << endl;
+    exit(0);
+  }
+  retcall = false;
+  env.remove_level();
+  return retval; // atributo de ImpInterpreter, no usar v
 }

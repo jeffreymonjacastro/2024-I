@@ -12,6 +12,9 @@ using namespace std;
 class ImpInterpreter : public ImpValueVisitor {
 private:
   Environment<ImpValue> env;
+  Environment<FunDec*> fdecs;
+  ImpValue retval;
+  bool retcall;
   
 public:
   void interpret(Program*);

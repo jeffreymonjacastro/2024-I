@@ -36,7 +36,7 @@ endfun
 fun void main()
   var int z, y;
   z = 10;
-  y = sumarec2(3);
+  y = sumarec(3);
   print(z);
   print(y);
   return()

@@ -5,6 +5,10 @@
 #include "imp_visitor.hh"
 
 class ImpPrinter : public ImpVisitor {
+private:
+  int indent = 0;
+  void print_indent();
+
 public:
   void print(Program*);
   void visit(Program*);

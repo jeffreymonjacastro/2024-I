@@ -1,5 +1,11 @@
 #include "imp_printer.hh"
 
+void ImpPrinter::print_indent() {
+  for (int i = 0; i < indent; i++) 
+    cout << "  ";
+  return;
+}
+
 void ImpPrinter::print(Program* p) {
   p->accept(this);
   return;
@@ -12,14 +18,17 @@ void ImpPrinter::visit(Program* p) {
 }
 
 void ImpPrinter::visit(Body * b) {
+  indent++;
   b->var_decs->accept(this);
   b->slist->accept(this);
+  indent--;
   return;
 }
 
 void ImpPrinter::visit(VarDecList* s) {
   list<VarDec*>::iterator it;
   for (it = s->vdlist.begin(); it != s->vdlist.end(); ++it) {
+    print_indent();
     (*it)->accept(this);
     cout << ";" << endl;
   }  
@@ -47,10 +56,10 @@ void ImpPrinter::visit(FunDec* fd) {
   }
   cout << ")" << endl;
   fd->body->accept(this);
-  cout << "endfun";
+  cout << "endfun" << endl;
   return;
 }
-			  
+
 void ImpPrinter::visit(VarDec* vd) {
   bool first = true;
   cout << "var " << vd->type << " ";
@@ -66,6 +75,7 @@ void ImpPrinter::visit(VarDec* vd) {
 void ImpPrinter::visit(StatementList* s) {
   list<Stm*>::iterator it;
   for (it = s->slist.begin(); it != s->slist.end(); ++it) {
+    print_indent();
     (*it)->accept(this);
     cout << ";" << endl;
   }
@@ -91,9 +101,11 @@ void ImpPrinter::visit(IfStatement* s) {
   cout << ") then" << endl;;
   s->tbody->accept(this);
   if (s->fbody!=NULL) {
+    print_indent();
     cout << "else" << endl;
     s->fbody->accept(this);
   }
+  print_indent();
   cout << "endif";
   return;
 }
@@ -103,6 +115,7 @@ void ImpPrinter::visit(WhileStatement* s) {
   s->cond->accept(this);
   cout << ") do" << endl;;
   s->body->accept(this);
+  print_indent();
   cout << "endwhile";
   return;
 }

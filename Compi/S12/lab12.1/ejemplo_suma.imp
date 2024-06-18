@@ -3,6 +3,15 @@ var int a, x;
 fun int suma(int x)
   var int accum;
   accum = 0;
+
+  if true then
+    if false then
+      print(1)
+    else
+      print(2)
+    endif
+  endif;
+
   while 0 < x do
     accum = accum + x; x = x - 1
   endwhile;
@@ -13,7 +22,7 @@ endfun
 fun void main()
   var int y;
   x = 5;
-  y = suma(3);
+  y = suma(4);
   print(y);
   return ()
 endfun
