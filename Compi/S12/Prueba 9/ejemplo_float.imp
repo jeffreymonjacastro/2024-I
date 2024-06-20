@@ -1,0 +1,15 @@
+var float y;
+
+fun float factorial(float x)
+  if (x < 1) then
+    return (0)
+  else
+    return (x * factorial(x-1))
+  endif;
+endfun
+
+fun void main()
+  y = foo(3.14);
+  print(y);
+  return ()
+endfun

@@ -23,8 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="Compi S8">
-      <change afterPath="$PROJECT_DIR$/Compi/S11/proj1/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S11/proj1/informe.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compi/S12/lab12.1/gramatica.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBII/S12/lab12.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +104,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jeffr/GitHub/compiladores-project1",
+    "last_opened_file_path": "C:/Users/jeffr/GitHub/2024-I/DBII",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -135,7 +136,12 @@
       <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S5\exp" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.Compi">
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ADA" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="ADA" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="ADA">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -147,11 +153,6 @@
       </method>
     </configuration>
     <configuration name="Compi" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="svmejemplo0.svm" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="2024_I" TARGET_NAME="Compi" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="2024_I" RUN_TARGET_NAME="Compi">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -178,21 +179,6 @@
       </makefile>
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="CMake Application.ADA" />
-      <item itemvalue="CMake Application.CPC" />
-      <item itemvalue="CMake Application.Compi" />
-      <item itemvalue="CMake Application.lab8" />
-      <item itemvalue="CMake Application.prueba6" />
-      <item itemvalue="Makefile Target.Makefile" />
-      <item itemvalue="Makefile Target.imp" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Makefile Target.Makefile" />
-        <item itemvalue="Makefile Target.imp" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
