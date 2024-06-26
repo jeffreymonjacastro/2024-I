@@ -5,7 +5,8 @@
     "iostream": "cpp",
     "cstdio": "cpp",
     "utility": "cpp",
-    "xstring": "cpp"
+    "xstring": "cpp",
+    "vector": "cpp"
   },
   "r.lsp.promptToInstall": false,
   "java.compile.nullAnalysis.mode": "automatic"
