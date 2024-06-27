@@ -1,0 +1,13 @@
+fun void cuadrado(int x)
+  var int z;
+  z = x*x;
+  print(z);
+  return ()
+endfun
+
+fun void main()
+  var int x;
+  x = 5;
+  cuadrado(x);
+  return ()
+endfun
