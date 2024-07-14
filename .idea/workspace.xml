@@ -23,10 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df87b10a-00e8-41f9-a819-9e8d0e31d736" name="Changes" comment="Compi S8">
-      <change afterPath="$PROJECT_DIR$/DBII/S15/lab14.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBII/S15/db_faker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBII/S15/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBII/S15/lab15.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBII/S15/lab15_v2.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBII/S15/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compi/S13/Lab13-solucion1/imp.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Compi/S13/Lab13-solucion1/imp.hh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBII/S12/lab12.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S12/lab12.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBII/S15/lab14.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DBII/S15/lab14.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,13 +109,13 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jeffr/GitHub/2024-I/DBII",
+    "last_opened_file_path": "C:/Users/jeffr/GitHub/2024-I/DBII/S15",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.editor",
     "structure.view.defaults.are.configured": "true",
     "vue.rearranger.settings.migration": "true"
   },
@@ -123,11 +127,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jeffr\GitHub\2024-I\DBII\S15" />
       <recent name="C:\Users\jeffr\GitHub\2024-I\cmake-build-debug" />
       <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S8\prueba6\cmake-build-debug" />
       <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S8\prueba6" />
       <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S8\Lab7" />
-      <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S8\Lab7\cmake-build-debug" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jeffr\GitHub\2024-I\Compi\S7\lab6" />
