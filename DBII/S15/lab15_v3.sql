@@ -1,13 +1,14 @@
 SET search_path TO lab15;
 
 -- Crear la tabla venta particionada
-CREATE TABLE venta (
-    IdVenta SERIAL,
-    DNI_Cliente INT,
-    FechaVenta DATE,
-    CodLocal VARCHAR(5),
+CREATE TABLE venta
+(
+    IdVenta      SERIAL,
+    DNI_Cliente  INT,
+    FechaVenta   DATE,
+    CodLocal     VARCHAR(5),
     ImporteTotal FLOAT,
-    IdEmpleado VARCHAR(6)
+    IdEmpleado   VARCHAR(6)
 ) PARTITION BY RANGE (FechaVenta);
 
 -- Crear particiones para la tabla venta
@@ -21,13 +22,14 @@ CREATE TABLE venta_2017_2024 PARTITION OF venta
     FOR VALUES FROM ('2017-01-01') TO ('2025-01-01');
 
 -- Crear tabla reclamo particionada por lista en CodLocal
-CREATE TABLE reclamo (
-    IdReclamo SERIAL,
-    DNI_Cliente INT,
+CREATE TABLE reclamo
+(
+    IdReclamo    SERIAL,
+    DNI_Cliente  INT,
     FechaReclamo DATE,
-    CodLocal VARCHAR(5),
-    Descripcion VARCHAR(100),
-    Estado VARCHAR(10)
+    CodLocal     VARCHAR(5),
+    Descripcion  VARCHAR(100),
+    Estado       VARCHAR(10)
 ) PARTITION BY LIST (CodLocal);
 
 -- Crear particiones para la tabla reclamo
@@ -74,8 +76,8 @@ ORDER BY CodLocal;
 
 SELECT R.*
 FROM reclamo R
-JOIN venta V
-ON R.DNI_Cliente = V.DNI_Cliente;
+         JOIN venta V
+              ON R.DNI_Cliente = V.DNI_Cliente;
 
 -- P1. Algoritmos distribuídos para consultas
 /* Consulta 1
@@ -84,61 +86,52 @@ ON R.DNI_Cliente = V.DNI_Cliente;
 */
 
 SELECT *
-FROM (
-    SELECT *
-    FROM (
-        SELECT V.*
-        FROM venta_2000_2008 V
-        WHERE V.ImporteTotal >= 666
-        UNION ALL
-        SELECT V.*
-        FROM venta_2009_2016 V
-        WHERE V.ImporteTotal >= 666
-        UNION ALL
-        SELECT V.*
-        FROM venta_2017_2024 V
-        WHERE V.ImporteTotal >= 666
-    ) AS temp_venta3
-    ORDER BY ImporteTotal DESC
-) AS temp_venta6
+FROM (SELECT *
+      FROM (SELECT V.*
+            FROM venta_2000_2008 V
+            WHERE V.ImporteTotal >= 666
+            UNION ALL
+            SELECT V.*
+            FROM venta_2009_2016 V
+            WHERE V.ImporteTotal >= 666
+            UNION ALL
+            SELECT V.*
+            FROM venta_2017_2024 V
+            WHERE V.ImporteTotal >= 666) AS temp_venta3
+      ORDER BY ImporteTotal DESC) AS temp_venta6
 UNION ALL
 SELECT *
-FROM (
-    SELECT *
-    FROM (
-        SELECT V.*
-        FROM venta_2000_2008 V
-        WHERE V.ImporteTotal >= 333 AND V.ImporteTotal < 666
-        UNION ALL
-        SELECT V.*
-        FROM venta_2009_2016 V
-        WHERE V.ImporteTotal >= 333 AND V.ImporteTotal < 666
-        UNION ALL
-        SELECT V.*
-        FROM venta_2017_2024 V
-        WHERE V.ImporteTotal >= 333 AND V.ImporteTotal < 666
-    ) AS temp_venta2
-    ORDER BY ImporteTotal DESC
-) AS temp_venta5
+FROM (SELECT *
+      FROM (SELECT V.*
+            FROM venta_2000_2008 V
+            WHERE V.ImporteTotal >= 333
+              AND V.ImporteTotal < 666
+            UNION ALL
+            SELECT V.*
+            FROM venta_2009_2016 V
+            WHERE V.ImporteTotal >= 333
+              AND V.ImporteTotal < 666
+            UNION ALL
+            SELECT V.*
+            FROM venta_2017_2024 V
+            WHERE V.ImporteTotal >= 333
+              AND V.ImporteTotal < 666) AS temp_venta2
+      ORDER BY ImporteTotal DESC) AS temp_venta5
 UNION ALL
 SELECT *
-FROM (
-    SELECT *
-    FROM (
-        SELECT V.*
-        FROM venta_2000_2008 V
-        WHERE V.ImporteTotal < 333
-        UNION ALL
-        SELECT V.*
-        FROM venta_2009_2016 V
-        WHERE V.ImporteTotal < 333
-        UNION ALL
-        SELECT V.*
-        FROM venta_2017_2024 V
-        WHERE V.ImporteTotal < 333
-    ) AS temp_venta1
-    ORDER BY ImporteTotal DESC
-) AS temp_venta4;
+FROM (SELECT *
+      FROM (SELECT V.*
+            FROM venta_2000_2008 V
+            WHERE V.ImporteTotal < 333
+            UNION ALL
+            SELECT V.*
+            FROM venta_2009_2016 V
+            WHERE V.ImporteTotal < 333
+            UNION ALL
+            SELECT V.*
+            FROM venta_2017_2024 V
+            WHERE V.ImporteTotal < 333) AS temp_venta1
+      ORDER BY ImporteTotal DESC) AS temp_venta4;
 
 /* Consulta 2
     El atributo DNI_Cliente se generó en el rango de 70000000 a 77500000
@@ -146,56 +139,51 @@ FROM (
 */
 
 SELECT *
-FROM (
-    SELECT DISTINCT DNI_Cliente
-    FROM (
-        SELECT V.DNI_Cliente
-        FROM venta_2000_2008 V
-        WHERE V.DNI_Cliente >= 75000000
-        UNION ALL
-        SELECT V.DNI_Cliente
-        FROM venta_2009_2016 V
-        WHERE V.DNI_Cliente >= 75000000
-        UNION ALL
-        SELECT V.DNI_Cliente
-        FROM venta_2017_2024 V
-        WHERE V.DNI_Cliente >= 75000000
-    ) AS temp_venta3
+FROM (SELECT DISTINCT DNI_Cliente
+      FROM (SELECT V.DNI_Cliente
+            FROM venta_2000_2008 V
+            WHERE V.DNI_Cliente >= 75000000
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM venta_2009_2016 V
+            WHERE V.DNI_Cliente >= 75000000
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM venta_2017_2024 V
+            WHERE V.DNI_Cliente >= 75000000) AS temp_venta3
 
-    UNION ALL
+      UNION ALL
 
-    SELECT DISTINCT DNI_Cliente
-    FROM (
-        SELECT V.DNI_Cliente
-        FROM venta_2000_2008 V
-        WHERE V.DNI_Cliente >= 72500000 AND V.DNI_Cliente < 75000000
-        UNION ALL
-        SELECT V.DNI_Cliente
-        FROM venta_2009_2016 V
-        WHERE V.DNI_Cliente >= 72500000 AND V.DNI_Cliente < 75000000
-        UNION ALL
-        SELECT V.DNI_Cliente
-        FROM venta_2017_2024 V
-        WHERE V.DNI_Cliente >= 72500000 AND V.DNI_Cliente < 75000000
-    ) AS temp_venta2
+      SELECT DISTINCT DNI_Cliente
+      FROM (SELECT V.DNI_Cliente
+            FROM venta_2000_2008 V
+            WHERE V.DNI_Cliente >= 72500000
+              AND V.DNI_Cliente < 75000000
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM venta_2009_2016 V
+            WHERE V.DNI_Cliente >= 72500000
+              AND V.DNI_Cliente < 75000000
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM venta_2017_2024 V
+            WHERE V.DNI_Cliente >= 72500000
+              AND V.DNI_Cliente < 75000000) AS temp_venta2
 
-    UNION ALL
+      UNION ALL
 
-    SELECT DISTINCT DNI_Cliente
-    FROM (
-        SELECT V.DNI_Cliente
-        FROM venta_2000_2008 V
-        WHERE V.DNI_Cliente < 72500000
-        UNION ALL
-        SELECT V.DNI_Cliente
-        FROM venta_2009_2016 V
-        WHERE V.DNI_Cliente < 72500000
-        UNION ALL
-        SELECT V.DNI_Cliente
-        FROM venta_2017_2024 V
-        WHERE V.DNI_Cliente < 72500000
-    ) AS temp_venta1
-) AS final_result;
+      SELECT DISTINCT DNI_Cliente
+      FROM (SELECT V.DNI_Cliente
+            FROM venta_2000_2008 V
+            WHERE V.DNI_Cliente < 72500000
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM venta_2009_2016 V
+            WHERE V.DNI_Cliente < 72500000
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM venta_2017_2024 V
+            WHERE V.DNI_Cliente < 72500000) AS temp_venta1) AS final_result;
 
 
 /*
@@ -205,71 +193,57 @@ FROM (
 */
 
 SELECT *
-FROM (
-    SELECT CodLocal, SUM(SumaImporte) / SUM(CantVentas) AS PromedioImporte
-    FROM (
-        SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
-        FROM (
-            SELECT V.CodLocal, V.ImporteTotal
-            FROM venta_2000_2008 V
-            WHERE V.CodLocal IN ('LOC01', 'LOC02', 'LOC03', 'LOC04')
-            UNION ALL
-            SELECT V.CodLocal, V.ImporteTotal
-            FROM venta_2009_2016 V
-            WHERE V.CodLocal IN ('LOC01', 'LOC02', 'LOC03', 'LOC04')
-            UNION ALL
-            SELECT V.CodLocal, V.ImporteTotal
-            FROM venta_2017_2024 V
-            WHERE V.CodLocal IN ('LOC01', 'LOC02', 'LOC03', 'LOC04')
-        ) AS temp_venta1
-        GROUP BY CodLocal
-    ) AS aggregated_temp_venta1
-    GROUP BY CodLocal
+FROM (SELECT CodLocal, SUM(SumaImporte) / SUM(CantVentas) AS PromedioImporte
+      FROM (SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
+            FROM (SELECT V.CodLocal, V.ImporteTotal
+                  FROM venta_2000_2008 V
+                  WHERE V.CodLocal IN ('LOC01', 'LOC02', 'LOC03', 'LOC04')
+                  UNION ALL
+                  SELECT V.CodLocal, V.ImporteTotal
+                  FROM venta_2009_2016 V
+                  WHERE V.CodLocal IN ('LOC01', 'LOC02', 'LOC03', 'LOC04')
+                  UNION ALL
+                  SELECT V.CodLocal, V.ImporteTotal
+                  FROM venta_2017_2024 V
+                  WHERE V.CodLocal IN ('LOC01', 'LOC02', 'LOC03', 'LOC04')) AS temp_venta1
+            GROUP BY CodLocal) AS aggregated_temp_venta1
+      GROUP BY CodLocal
 
-    UNION ALL
+      UNION ALL
 
-    SELECT CodLocal, SUM(SumaImporte) / SUM(CantVentas) AS PromedioImporte
-    FROM (
-        SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
-        FROM (
-            SELECT V.CodLocal, V.ImporteTotal
-            FROM venta_2000_2008 V
-            WHERE V.CodLocal IN ('LOC05', 'LOC06', 'LOC07', 'LOC08')
-            UNION ALL
-            SELECT V.CodLocal, V.ImporteTotal
-            FROM venta_2009_2016 V
-            WHERE V.CodLocal IN ('LOC05', 'LOC06', 'LOC07', 'LOC08')
-            UNION ALL
-            SELECT V.CodLocal, V.ImporteTotal
-            FROM venta_2017_2024 V
-            WHERE V.CodLocal IN ('LOC05', 'LOC06', 'LOC07', 'LOC08')
-        ) AS temp_venta2
-        GROUP BY CodLocal
-    ) AS aggregated_temp_venta2
-    GROUP BY CodLocal
+      SELECT CodLocal, SUM(SumaImporte) / SUM(CantVentas) AS PromedioImporte
+      FROM (SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
+            FROM (SELECT V.CodLocal, V.ImporteTotal
+                  FROM venta_2000_2008 V
+                  WHERE V.CodLocal IN ('LOC05', 'LOC06', 'LOC07', 'LOC08')
+                  UNION ALL
+                  SELECT V.CodLocal, V.ImporteTotal
+                  FROM venta_2009_2016 V
+                  WHERE V.CodLocal IN ('LOC05', 'LOC06', 'LOC07', 'LOC08')
+                  UNION ALL
+                  SELECT V.CodLocal, V.ImporteTotal
+                  FROM venta_2017_2024 V
+                  WHERE V.CodLocal IN ('LOC05', 'LOC06', 'LOC07', 'LOC08')) AS temp_venta2
+            GROUP BY CodLocal) AS aggregated_temp_venta2
+      GROUP BY CodLocal
 
-    UNION ALL
+      UNION ALL
 
-    SELECT CodLocal, SUM(SumaImporte) / SUM(CantVentas) AS PromedioImporte
-    FROM (
-        SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
-        FROM (
-            SELECT V.CodLocal, V.ImporteTotal
-            FROM venta_2000_2008 V
-            WHERE V.CodLocal IN ('LOC09', 'LOC10', 'LOC11', 'LOC12')
-            UNION ALL
-            SELECT V.CodLocal, V.ImporteTotal
-            FROM venta_2009_2016 V
-            WHERE V.CodLocal IN ('LOC09', 'LOC10', 'LOC11', 'LOC12')
-            UNION ALL
-            SELECT V.CodLocal, V.ImporteTotal
-            FROM venta_2017_2024 V
-            WHERE V.CodLocal IN ('LOC09', 'LOC10', 'LOC11', 'LOC12')
-        ) AS temp_venta3
-        GROUP BY CodLocal
-    ) AS aggregated_temp_venta3
-    GROUP BY CodLocal
-) AS final_result
+      SELECT CodLocal, SUM(SumaImporte) / SUM(CantVentas) AS PromedioImporte
+      FROM (SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
+            FROM (SELECT V.CodLocal, V.ImporteTotal
+                  FROM venta_2000_2008 V
+                  WHERE V.CodLocal IN ('LOC09', 'LOC10', 'LOC11', 'LOC12')
+                  UNION ALL
+                  SELECT V.CodLocal, V.ImporteTotal
+                  FROM venta_2009_2016 V
+                  WHERE V.CodLocal IN ('LOC09', 'LOC10', 'LOC11', 'LOC12')
+                  UNION ALL
+                  SELECT V.CodLocal, V.ImporteTotal
+                  FROM venta_2017_2024 V
+                  WHERE V.CodLocal IN ('LOC09', 'LOC10', 'LOC11', 'LOC12')) AS temp_venta3
+            GROUP BY CodLocal) AS aggregated_temp_venta3
+      GROUP BY CodLocal) AS final_result
 ORDER BY CodLocal;
 
 /*
@@ -279,98 +253,90 @@ ORDER BY CodLocal;
 */
 
 SELECT *
-FROM (
-    SELECT *
-    FROM (
-        SELECT R.*
-        FROM reclamo_loc1 R
-        WHERE R.DNI_Cliente < 72500000
-        UNION ALL
-        SELECT R.*
-        FROM reclamo_loc2 R
-        WHERE R.DNI_Cliente < 72500000
-        UNION ALL
-        SELECT R.*
-        FROM reclamo_loc3 R
-        WHERE R.DNI_Cliente < 72500000
-    ) AS temp_reclamo1
-    JOIN (
-        SELECT DNI_Cliente
-        FROM venta_2000_2008 V
-        WHERE V.DNI_Cliente < 72500000
-        UNION ALL
-        SELECT DNI_Cliente
-        FROM venta_2009_2016 V
-        WHERE V.DNI_Cliente < 72500000
-        UNION ALL
-        SELECT DNI_Cliente
-        FROM venta_2017_2024 V
-        WHERE V.DNI_Cliente < 72500000
-    ) AS temp_venta1
-    ON temp_reclamo1.DNI_Cliente = temp_venta1.DNI_Cliente
+FROM (SELECT *
+      FROM (SELECT R.*
+            FROM reclamo_loc1 R
+            WHERE R.DNI_Cliente < 72500000
+            UNION ALL
+            SELECT R.*
+            FROM reclamo_loc2 R
+            WHERE R.DNI_Cliente < 72500000
+            UNION ALL
+            SELECT R.*
+            FROM reclamo_loc3 R
+            WHERE R.DNI_Cliente < 72500000) AS temp_reclamo1
+               JOIN (SELECT DNI_Cliente
+                     FROM venta_2000_2008 V
+                     WHERE V.DNI_Cliente < 72500000
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM venta_2009_2016 V
+                     WHERE V.DNI_Cliente < 72500000
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM venta_2017_2024 V
+                     WHERE V.DNI_Cliente < 72500000) AS temp_venta1
+                    ON temp_reclamo1.DNI_Cliente = temp_venta1.DNI_Cliente
 
-    UNION ALL
+      UNION ALL
 
-    SELECT *
-    FROM (
-        SELECT R.*
-        FROM reclamo_loc1 R
-        WHERE R.DNI_Cliente >= 72500000 AND R.DNI_Cliente < 75000000
-        UNION ALL
-        SELECT R.*
-        FROM reclamo_loc2 R
-        WHERE R.DNI_Cliente >= 72500000 AND R.DNI_Cliente < 75000000
-        UNION ALL
-        SELECT R.*
-        FROM reclamo_loc3 R
-        WHERE R.DNI_Cliente >= 72500000 AND R.DNI_Cliente < 75000000
-    ) AS temp_reclamo2
-    JOIN (
-        SELECT DNI_Cliente
-        FROM venta_2000_2008 V
-        WHERE V.DNI_Cliente >= 72500000 AND V.DNI_Cliente < 75000000
-        UNION ALL
-        SELECT DNI_Cliente
-        FROM venta_2009_2016 V
-        WHERE V.DNI_Cliente >= 72500000 AND V.DNI_Cliente < 75000000
-        UNION ALL
-        SELECT DNI_Cliente
-        FROM venta_2017_2024 V
-        WHERE V.DNI_Cliente >= 72500000 AND V.DNI_Cliente < 75000000
-    ) AS temp_venta2
-    ON temp_reclamo2.DNI_Cliente = temp_venta2.DNI_Cliente
+      SELECT *
+      FROM (SELECT R.*
+            FROM reclamo_loc1 R
+            WHERE R.DNI_Cliente >= 72500000
+              AND R.DNI_Cliente < 75000000
+            UNION ALL
+            SELECT R.*
+            FROM reclamo_loc2 R
+            WHERE R.DNI_Cliente >= 72500000
+              AND R.DNI_Cliente < 75000000
+            UNION ALL
+            SELECT R.*
+            FROM reclamo_loc3 R
+            WHERE R.DNI_Cliente >= 72500000
+              AND R.DNI_Cliente < 75000000) AS temp_reclamo2
+               JOIN (SELECT DNI_Cliente
+                     FROM venta_2000_2008 V
+                     WHERE V.DNI_Cliente >= 72500000
+                       AND V.DNI_Cliente < 75000000
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM venta_2009_2016 V
+                     WHERE V.DNI_Cliente >= 72500000
+                       AND V.DNI_Cliente < 75000000
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM venta_2017_2024 V
+                     WHERE V.DNI_Cliente >= 72500000
+                       AND V.DNI_Cliente < 75000000) AS temp_venta2
+                    ON temp_reclamo2.DNI_Cliente = temp_venta2.DNI_Cliente
 
-    UNION ALL
+      UNION ALL
 
-    SELECT *
-    FROM (
-        SELECT R.*
-        FROM reclamo_loc1 R
-        WHERE R.DNI_Cliente >= 75000000
-        UNION ALL
-        SELECT R.*
-        FROM reclamo_loc2 R
-        WHERE R.DNI_Cliente >= 75000000
-        UNION ALL
-        SELECT R.*
-        FROM reclamo_loc3 R
-        WHERE R.DNI_Cliente >= 75000000
-    ) AS temp_reclamo3
-    JOIN (
-        SELECT DNI_Cliente
-        FROM venta_2000_2008 V
-        WHERE V.DNI_Cliente >= 75000000
-        UNION ALL
-        SELECT DNI_Cliente
-        FROM venta_2009_2016 V
-        WHERE V.DNI_Cliente >= 75000000
-        UNION ALL
-        SELECT DNI_Cliente
-        FROM venta_2017_2024 V
-        WHERE V.DNI_Cliente >= 75000000
-    ) AS temp_venta3
-    ON temp_reclamo3.DNI_Cliente = temp_venta3.DNI_Cliente
-) AS final_result;
+      SELECT *
+      FROM (SELECT R.*
+            FROM reclamo_loc1 R
+            WHERE R.DNI_Cliente >= 75000000
+            UNION ALL
+            SELECT R.*
+            FROM reclamo_loc2 R
+            WHERE R.DNI_Cliente >= 75000000
+            UNION ALL
+            SELECT R.*
+            FROM reclamo_loc3 R
+            WHERE R.DNI_Cliente >= 75000000) AS temp_reclamo3
+               JOIN (SELECT DNI_Cliente
+                     FROM venta_2000_2008 V
+                     WHERE V.DNI_Cliente >= 75000000
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM venta_2009_2016 V
+                     WHERE V.DNI_Cliente >= 75000000
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM venta_2017_2024 V
+                     WHERE V.DNI_Cliente >= 75000000) AS temp_venta3
+                    ON temp_reclamo3.DNI_Cliente = temp_venta3.DNI_Cliente) AS final_result;
 
 
 /* P2 - CONSULTAS EN 3 SERVIDORES */
@@ -379,338 +345,301 @@ CREATE EXTENSION dblink;
 
 -- C1
 SELECT *
-FROM (
-         SELECT *
-         FROM (
-                  SELECT V.*
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT * FROM venta_2000_2008 WHERE ImporteTotal >= 666')
-                           AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT, IdEmpleado VARCHAR)
-                  UNION ALL
-                  SELECT V.*
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT * FROM venta_2009_2016 WHERE ImporteTotal >= 666')
-                           AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT, IdEmpleado VARCHAR)
-                  UNION ALL
-                  SELECT V.*
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT * FROM venta_2017_2024 WHERE ImporteTotal >= 666')
-                           AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT, IdEmpleado VARCHAR)
-              ) AS temp_venta3
-         ORDER BY ImporteTotal DESC
-     ) AS temp_venta6
+FROM (SELECT *
+      FROM (SELECT V.*
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT * FROM venta_2000_2008 WHERE ImporteTotal >= 666')
+                     AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT,
+                          IdEmpleado VARCHAR)
+            UNION ALL
+            SELECT V.*
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT * FROM venta_2009_2016 WHERE ImporteTotal >= 666')
+                     AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT,
+                          IdEmpleado VARCHAR)
+            UNION ALL
+            SELECT V.*
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT * FROM venta_2017_2024 WHERE ImporteTotal >= 666')
+                     AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT,
+                          IdEmpleado VARCHAR)) AS temp_venta3
+      ORDER BY ImporteTotal DESC) AS temp_venta6
 
 UNION ALL
 
 SELECT *
-FROM (
-         SELECT *
-         FROM (
-                  SELECT V.*
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT * FROM venta_2000_2008 WHERE ImporteTotal >= 333 AND ImporteTotal < 666')
-                           AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT, IdEmpleado VARCHAR)
-                  UNION ALL
-                  SELECT V.*
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT * FROM venta_2009_2016 WHERE ImporteTotal >= 333 AND ImporteTotal < 666')
-                           AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT, IdEmpleado VARCHAR)
-                  UNION ALL
-                  SELECT V.*
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT * FROM venta_2017_2024 WHERE ImporteTotal >= 333 AND ImporteTotal < 666')
-                           AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT, IdEmpleado VARCHAR)
-              ) AS temp_venta2
-         ORDER BY ImporteTotal DESC
-     ) AS temp_venta5
+FROM (SELECT *
+      FROM (SELECT V.*
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT * FROM venta_2000_2008 WHERE ImporteTotal >= 333 AND ImporteTotal < 666')
+                     AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT,
+                          IdEmpleado VARCHAR)
+            UNION ALL
+            SELECT V.*
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT * FROM venta_2009_2016 WHERE ImporteTotal >= 333 AND ImporteTotal < 666')
+                     AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT,
+                          IdEmpleado VARCHAR)
+            UNION ALL
+            SELECT V.*
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT * FROM venta_2017_2024 WHERE ImporteTotal >= 333 AND ImporteTotal < 666')
+                     AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT,
+                          IdEmpleado VARCHAR)) AS temp_venta2
+      ORDER BY ImporteTotal DESC) AS temp_venta5
 
 UNION ALL
 
 SELECT *
-FROM (
-         SELECT *
-         FROM (
-                  SELECT V.*
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT * FROM venta_2000_2008 WHERE ImporteTotal < 333')
-                           AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT, IdEmpleado VARCHAR)
-                  UNION ALL
-                  SELECT V.*
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT * FROM venta_2009_2016 WHERE ImporteTotal < 333')
-                           AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT, IdEmpleado VARCHAR)
-                  UNION ALL
-                  SELECT V.*
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT * FROM venta_2017_2024 WHERE ImporteTotal < 333')
-                           AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT, IdEmpleado VARCHAR)
-              ) AS temp_venta1
-         ORDER BY ImporteTotal DESC
-     ) AS temp_venta4
+FROM (SELECT *
+      FROM (SELECT V.*
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT * FROM venta_2000_2008 WHERE ImporteTotal < 333')
+                     AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT,
+                          IdEmpleado VARCHAR)
+            UNION ALL
+            SELECT V.*
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT * FROM venta_2009_2016 WHERE ImporteTotal < 333')
+                     AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT,
+                          IdEmpleado VARCHAR)
+            UNION ALL
+            SELECT V.*
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT * FROM venta_2017_2024 WHERE ImporteTotal < 333')
+                     AS V(IdVenta INT, DNI_Cliente INT, FechaVenta DATE, CodLocal VARCHAR, ImporteTotal FLOAT,
+                          IdEmpleado VARCHAR)) AS temp_venta1
+      ORDER BY ImporteTotal DESC) AS temp_venta4
 ORDER BY ImporteTotal DESC;
 
 --C2
 SELECT DISTINCT DNI_Cliente
-FROM (
-         SELECT *
-         FROM (
-                  SELECT V.DNI_Cliente
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente >= 75000000')
-                           AS V(DNI_Cliente INT)
-                  UNION ALL
-                  SELECT V.DNI_Cliente
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente >= 75000000')
-                           AS V(DNI_Cliente INT)
-                  UNION ALL
-                  SELECT V.DNI_Cliente
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente >= 75000000')
-                           AS V(DNI_Cliente INT)
-              ) AS temp_venta3
-     ) AS temp_venta6
+FROM (SELECT *
+      FROM (SELECT V.DNI_Cliente
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente >= 75000000')
+                     AS V(DNI_Cliente INT)
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente >= 75000000')
+                     AS V(DNI_Cliente INT)
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente >= 75000000')
+                     AS V(DNI_Cliente INT)) AS temp_venta3) AS temp_venta6
 
 UNION ALL
 
 SELECT DISTINCT DNI_Cliente
-FROM (
-         SELECT *
-         FROM (
-                  SELECT V.DNI_Cliente
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
-                           AS V(DNI_Cliente INT)
-                  UNION ALL
-                  SELECT V.DNI_Cliente
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
-                           AS V(DNI_Cliente INT)
-                  UNION ALL
-                  SELECT V.DNI_Cliente
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
-                           AS V(DNI_Cliente INT)
-              ) AS temp_venta2
-     ) AS temp_venta5
+FROM (SELECT *
+      FROM (SELECT V.DNI_Cliente
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
+                     AS V(DNI_Cliente INT)
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
+                     AS V(DNI_Cliente INT)
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
+                     AS V(DNI_Cliente INT)) AS temp_venta2) AS temp_venta5
 
 UNION ALL
 
 SELECT DISTINCT DNI_Cliente
-FROM (
-         SELECT *
-         FROM (
-                  SELECT V.DNI_Cliente
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente < 72500000')
-                           AS V(DNI_Cliente INT)
-                  UNION ALL
-                  SELECT V.DNI_Cliente
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente < 72500000')
-                           AS V(DNI_Cliente INT)
-                  UNION ALL
-                  SELECT V.DNI_Cliente
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente < 72500000')
-                           AS V(DNI_Cliente INT)
-              ) AS temp_venta1
-     ) AS temp_venta4;
+FROM (SELECT *
+      FROM (SELECT V.DNI_Cliente
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente < 72500000')
+                     AS V(DNI_Cliente INT)
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente < 72500000')
+                     AS V(DNI_Cliente INT)
+            UNION ALL
+            SELECT V.DNI_Cliente
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente < 72500000')
+                     AS V(DNI_Cliente INT)) AS temp_venta1) AS temp_venta4;
 
 -- C3
 SELECT CodLocal, SUM(SumaImporte) / SUM(CantVentas) AS PromedioImporte
-FROM (
-         SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
-         FROM (
-                  SELECT V.CodLocal, V.ImporteTotal
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT CodLocal, ImporteTotal FROM venta_2000_2008 WHERE CodLocal IN (''LOC01'', ''LOC02'', ''LOC03'', ''LOC04'')')
-                           AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
-                  UNION ALL
-                  SELECT V.CodLocal, V.ImporteTotal
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT CodLocal, ImporteTotal FROM venta_2009_2016 WHERE CodLocal IN (''LOC01'', ''LOC02'', ''LOC03'', ''LOC04'')')
-                           AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
-                  UNION ALL
-                  SELECT V.CodLocal, V.ImporteTotal
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT CodLocal, ImporteTotal FROM venta_2017_2024 WHERE CodLocal IN (''LOC01'', ''LOC02'', ''LOC03'', ''LOC04'')')
-                           AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
-              ) AS temp_venta1
-         GROUP BY CodLocal
-     ) AS aggregated_temp_venta1
+FROM (SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
+      FROM (SELECT V.CodLocal, V.ImporteTotal
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT CodLocal, ImporteTotal FROM venta_2000_2008 WHERE CodLocal IN (''LOC01'', ''LOC02'', ''LOC03'', ''LOC04'')')
+                     AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
+            UNION ALL
+            SELECT V.CodLocal, V.ImporteTotal
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT CodLocal, ImporteTotal FROM venta_2009_2016 WHERE CodLocal IN (''LOC01'', ''LOC02'', ''LOC03'', ''LOC04'')')
+                     AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
+            UNION ALL
+            SELECT V.CodLocal, V.ImporteTotal
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT CodLocal, ImporteTotal FROM venta_2017_2024 WHERE CodLocal IN (''LOC01'', ''LOC02'', ''LOC03'', ''LOC04'')')
+                     AS V(CodLocal VARCHAR, ImporteTotal FLOAT)) AS temp_venta1
+      GROUP BY CodLocal) AS aggregated_temp_venta1
 GROUP BY CodLocal
 
 UNION ALL
 
 SELECT CodLocal, SUM(SumaImporte) / SUM(CantVentas) AS PromedioImporte
-FROM (
-         SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
-         FROM (
-                  SELECT V.CodLocal, V.ImporteTotal
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT CodLocal, ImporteTotal FROM venta_2000_2008 WHERE CodLocal IN (''LOC05'', ''LOC06'', ''LOC07'', ''LOC08'')')
-                           AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
-                  UNION ALL
-                  SELECT V.CodLocal, V.ImporteTotal
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT CodLocal, ImporteTotal FROM venta_2009_2016 WHERE CodLocal IN (''LOC05'', ''LOC06'', ''LOC07'', ''LOC08'')')
-                           AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
-                  UNION ALL
-                  SELECT V.CodLocal, V.ImporteTotal
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT CodLocal, ImporteTotal FROM venta_2017_2024 WHERE CodLocal IN (''LOC05'', ''LOC06'', ''LOC07'', ''LOC08'')')
-                           AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
-              ) AS temp_venta2
-         GROUP BY CodLocal
-     ) AS aggregated_temp_venta2
+FROM (SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
+      FROM (SELECT V.CodLocal, V.ImporteTotal
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT CodLocal, ImporteTotal FROM venta_2000_2008 WHERE CodLocal IN (''LOC05'', ''LOC06'', ''LOC07'', ''LOC08'')')
+                     AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
+            UNION ALL
+            SELECT V.CodLocal, V.ImporteTotal
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT CodLocal, ImporteTotal FROM venta_2009_2016 WHERE CodLocal IN (''LOC05'', ''LOC06'', ''LOC07'', ''LOC08'')')
+                     AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
+            UNION ALL
+            SELECT V.CodLocal, V.ImporteTotal
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT CodLocal, ImporteTotal FROM venta_2017_2024 WHERE CodLocal IN (''LOC05'', ''LOC06'', ''LOC07'', ''LOC08'')')
+                     AS V(CodLocal VARCHAR, ImporteTotal FLOAT)) AS temp_venta2
+      GROUP BY CodLocal) AS aggregated_temp_venta2
 GROUP BY CodLocal
 
 UNION ALL
 
 SELECT CodLocal, SUM(SumaImporte) / SUM(CantVentas) AS PromedioImporte
-FROM (
-         SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
-         FROM (
-                  SELECT V.CodLocal, V.ImporteTotal
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT CodLocal, ImporteTotal FROM venta_2000_2008 WHERE CodLocal IN (''LOC09'', ''LOC10'', ''LOC11'', ''LOC12'')')
-                           AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
-                  UNION ALL
-                  SELECT V.CodLocal, V.ImporteTotal
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT CodLocal, ImporteTotal FROM venta_2009_2016 WHERE CodLocal IN (''LOC09'', ''LOC10'', ''LOC11'', ''LOC12'')')
-                           AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
-                  UNION ALL
-                  SELECT V.CodLocal, V.ImporteTotal
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT CodLocal, ImporteTotal FROM venta_2017_2024 WHERE CodLocal IN (''LOC09'', ''LOC10'', ''LOC11'', ''LOC12'')')
-                           AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
-              ) AS temp_venta3
-         GROUP BY CodLocal
-     ) AS aggregated_temp_venta3
+FROM (SELECT CodLocal, SUM(ImporteTotal) AS SumaImporte, COUNT(*) AS CantVentas
+      FROM (SELECT V.CodLocal, V.ImporteTotal
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT CodLocal, ImporteTotal FROM venta_2000_2008 WHERE CodLocal IN (''LOC09'', ''LOC10'', ''LOC11'', ''LOC12'')')
+                     AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
+            UNION ALL
+            SELECT V.CodLocal, V.ImporteTotal
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT CodLocal, ImporteTotal FROM venta_2009_2016 WHERE CodLocal IN (''LOC09'', ''LOC10'', ''LOC11'', ''LOC12'')')
+                     AS V(CodLocal VARCHAR, ImporteTotal FLOAT)
+            UNION ALL
+            SELECT V.CodLocal, V.ImporteTotal
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT CodLocal, ImporteTotal FROM venta_2017_2024 WHERE CodLocal IN (''LOC09'', ''LOC10'', ''LOC11'', ''LOC12'')')
+                     AS V(CodLocal VARCHAR, ImporteTotal FLOAT)) AS temp_venta3
+      GROUP BY CodLocal) AS aggregated_temp_venta3
 GROUP BY CodLocal;
 
 
 --C4
 SELECT *
-FROM (
-         SELECT *
-         FROM (
-                  SELECT R.*
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT * FROM reclamo_loc1_loc4 WHERE DNI_Cliente < 72500000')
-                           AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR, Estado VARCHAR)
-                  UNION ALL
-                  SELECT R.*
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT * FROM reclamo_loc5_loc8 WHERE DNI_Cliente < 72500000')
-                           AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR, Estado VARCHAR)
-                  UNION ALL
-                  SELECT R.*
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT * FROM reclamo_loc9_loc12 WHERE DNI_Cliente < 72500000')
-                           AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR, Estado VARCHAR)
-              ) AS temp_reclamo1
-                  JOIN (
-             SELECT DNI_Cliente
-             FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                         'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente < 72500000')
-                      AS V(DNI_Cliente INT)
-             UNION ALL
-             SELECT DNI_Cliente
-             FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                         'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente < 72500000')
-                      AS V(DNI_Cliente INT)
-             UNION ALL
-             SELECT DNI_Cliente
-             FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                         'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente < 72500000')
-                      AS V(DNI_Cliente INT)
-         ) AS temp_venta1
-                       ON temp_reclamo1.DNI_Cliente = temp_venta1.DNI_Cliente
-     ) AS result1
+FROM (SELECT *
+      FROM (SELECT R.*
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT * FROM reclamo_loc1_loc4 WHERE DNI_Cliente < 72500000')
+                     AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR,
+                          Estado VARCHAR)
+            UNION ALL
+            SELECT R.*
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT * FROM reclamo_loc5_loc8 WHERE DNI_Cliente < 72500000')
+                     AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR,
+                          Estado VARCHAR)
+            UNION ALL
+            SELECT R.*
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT * FROM reclamo_loc9_loc12 WHERE DNI_Cliente < 72500000')
+                     AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR,
+                          Estado VARCHAR)) AS temp_reclamo1
+               JOIN (SELECT DNI_Cliente
+                     FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                                 'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente < 72500000')
+                              AS V(DNI_Cliente INT)
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                                 'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente < 72500000')
+                              AS V(DNI_Cliente INT)
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                                 'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente < 72500000')
+                              AS V(DNI_Cliente INT)) AS temp_venta1
+                    ON temp_reclamo1.DNI_Cliente = temp_venta1.DNI_Cliente) AS result1
 
 UNION ALL
 
 SELECT *
-FROM (
-         SELECT *
-         FROM (
-                  SELECT R.*
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT * FROM reclamo_loc1_loc4 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
-                           AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR, Estado VARCHAR)
-                  UNION ALL
-                  SELECT R.*
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT * FROM reclamo_loc5_loc8 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
-                           AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR, Estado VARCHAR)
-                  UNION ALL
-                  SELECT R.*
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT * FROM reclamo_loc9_loc12 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
-                           AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR, Estado VARCHAR)
-              ) AS temp_reclamo2
-                  JOIN (
-             SELECT DNI_Cliente
-             FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                         'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
-                      AS V(DNI_Cliente INT)
-             UNION ALL
-             SELECT DNI_Cliente
-             FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                         'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
-                      AS V(DNI_Cliente INT)
-             UNION ALL
-             SELECT DNI_Cliente
-             FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                         'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
-                      AS V(DNI_Cliente INT)
-         ) AS temp_venta2
-                       ON temp_reclamo2.DNI_Cliente = temp_venta2.DNI_Cliente
-     ) AS result2
+FROM (SELECT *
+      FROM (SELECT R.*
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT * FROM reclamo_loc1_loc4 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
+                     AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR,
+                          Estado VARCHAR)
+            UNION ALL
+            SELECT R.*
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT * FROM reclamo_loc5_loc8 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
+                     AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR,
+                          Estado VARCHAR)
+            UNION ALL
+            SELECT R.*
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT * FROM reclamo_loc9_loc12 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
+                     AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR,
+                          Estado VARCHAR)) AS temp_reclamo2
+               JOIN (SELECT DNI_Cliente
+                     FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                                 'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
+                              AS V(DNI_Cliente INT)
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                                 'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
+                              AS V(DNI_Cliente INT)
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                                 'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente >= 72500000 AND DNI_Cliente < 75000000')
+                              AS V(DNI_Cliente INT)) AS temp_venta2
+                    ON temp_reclamo2.DNI_Cliente = temp_venta2.DNI_Cliente) AS result2
 
 UNION ALL
 
 SELECT *
-FROM (
-         SELECT *
-         FROM (
-                  SELECT R.*
-                  FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                              'SELECT * FROM reclamo_loc1_loc4 WHERE DNI_Cliente >= 75000000')
-                           AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR, Estado VARCHAR)
-                  UNION ALL
-                  SELECT R.*
-                  FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                              'SELECT * FROM reclamo_loc5_loc8 WHERE DNI_Cliente >= 75000000')
-                           AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR, Estado VARCHAR)
-                  UNION ALL
-                  SELECT R.*
-                  FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                              'SELECT * FROM reclamo_loc9_loc12 WHERE DNI_Cliente >= 75000000')
-                           AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR, Estado VARCHAR)
-              ) AS temp_reclamo3
-                  JOIN (
-             SELECT DNI_Cliente
-             FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
-                         'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente >= 75000000')
-                      AS V(DNI_Cliente INT)
-             UNION ALL
-             SELECT DNI_Cliente
-             FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
-                         'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente >= 75000000')
-                      AS V(DNI_Cliente INT)
-             UNION ALL
-             SELECT DNI_Cliente
-             FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
-                         'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente >= 75000000')
-                      AS V(DNI_Cliente INT)
-         ) AS temp_venta3
-                       ON temp_reclamo3.DNI_Cliente = temp_venta3.DNI_Cliente
-     ) AS result3;
-
+FROM (SELECT *
+      FROM (SELECT R.*
+            FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                        'SELECT * FROM reclamo_loc1_loc4 WHERE DNI_Cliente >= 75000000')
+                     AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR,
+                          Estado VARCHAR)
+            UNION ALL
+            SELECT R.*
+            FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                        'SELECT * FROM reclamo_loc5_loc8 WHERE DNI_Cliente >= 75000000')
+                     AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR,
+                          Estado VARCHAR)
+            UNION ALL
+            SELECT R.*
+            FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                        'SELECT * FROM reclamo_loc9_loc12 WHERE DNI_Cliente >= 75000000')
+                     AS R(IdReclamo INT, DNI_Cliente INT, FechaReclamo DATE, CodLocal VARCHAR, Descripcion VARCHAR,
+                          Estado VARCHAR)) AS temp_reclamo3
+               JOIN (SELECT DNI_Cliente
+                     FROM dblink('dbname=db1 user=user1 password=password1 host=localhost port=5433',
+                                 'SELECT DNI_Cliente FROM venta_2000_2008 WHERE DNI_Cliente >= 75000000')
+                              AS V(DNI_Cliente INT)
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM dblink('dbname=db2 user=user2 password=password2 host=localhost port=5434',
+                                 'SELECT DNI_Cliente FROM venta_2009_2016 WHERE DNI_Cliente >= 75000000')
+                              AS V(DNI_Cliente INT)
+                     UNION ALL
+                     SELECT DNI_Cliente
+                     FROM dblink('dbname=db3 user=user3 password=password3 host=localhost port=5435',
+                                 'SELECT DNI_Cliente FROM venta_2017_2024 WHERE DNI_Cliente >= 75000000')
+                              AS V(DNI_Cliente INT)) AS temp_venta3
+                    ON temp_reclamo3.DNI_Cliente = temp_venta3.DNI_Cliente) AS result3;
 
 
 /*
